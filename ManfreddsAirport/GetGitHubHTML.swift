@@ -9,18 +9,20 @@
 import Foundation
 
 class GetGitHubHTML : Network {
-    init(success successCallback: @escaping NetworkCallback, failure failureCallback: @escaping VoidCallback) throws {
+    init(success successCallback: @escaping VoidCallback, failure failureCallback: @escaping VoidCallback) throws {
         let url = URL(string: Domain.GitHub)!
         var request = URLRequest(url: url)
         
         request.httpMethod = HTTPMethod.GET
         
-        super.init(request: request, responseCompletionHandler: { data, response in
-            let responseHTML = String(data: data!, encoding: String.Encoding.utf8)
-            
-            successCallback(responseHTML!)
-        }, responseErrorHander: { error in
-            failureCallback()
+        
+        super.init(request: request, callback: { (data, response, error) in
+//            guard let responseHTML = String(data: data!, encoding: String.Encoding.utf8) else {
+//                failureCallback()
+//                return
+//            }
+//            
+//            successCallback()
         })
     }
 }

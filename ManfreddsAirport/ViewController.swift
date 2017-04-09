@@ -9,56 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        do {
-//            _ = try GetGitHubHTML(success: { responseString in
-//                print("Miss Pooh GitHub Success: \(responseString)")
-//            }, failure: {
-//                self.gitHubFailure()
-//            })
-//        } catch let error as Error {
-//            self.gitHubFailure()
-//        }
-//        
 
-//        if let node = GetNodeJSHTML() {
-//            node.fetch(success: { responseString in
-//                print("Miss Pooh \(node) Success: \(responseString)")
-//            }, failure: {
-//                self.nodeFailure()
-//            })
-//        } else {
-//            self.nodeFailure()
-//        }
-        
+        _ = GetNodeJSHTML(success: { htmlString in
+            print("Miss Piglet: \(htmlString)")
+        }, failure: { print("\(NodeJSError.NodeJSFailure)") })
+
         _ = GetWhatsPlayingTodayOnWFMU(success: { slots in
             for slot in slots {
-                if let show = slot["show"] as! [String:Any]?, let title = show["title"] {
-                    print("Miss Pooh Playing Today Success: \(title)")
-                } else {
-                    print("Miss Pooh Title Error")
-                }
+                let dateFormatter = DateFormatter()
+
+                dateFormatter.dateStyle = .long
+                dateFormatter.timeStyle = .medium
+                
+                print("Miss Pooh: \(slot.title) on \(dateFormatter.string(from:slot.when))")
             }
-        }, failure: {
-            print("Miss Pooh Playing Today Error")
-        })
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func nodeFailure() {
-        print("Miss Pooh Node Error")
+        }, failure: { error in print("\(error)") })
     }
     
-    func gitHubFailure() {
-        print("Miss Pooh GitHub Error")
+    @IBAction func hiMissTikkie(_ sender: Any) {
+        print("Hi Miss Tikkie \(sender)")
     }
 }
 

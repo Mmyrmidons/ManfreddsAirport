@@ -15,6 +15,12 @@
 		B46F1AB41E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
 		B49077BC1E40D23C00FF45AB /* GetNodeJSHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49077BB1E40D23C00FF45AB /* GetNodeJSHTML.swift */; };
 		B49077BF1E40D4C100FF45AB /* GetW3CHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49077BE1E40D4C100FF45AB /* GetW3CHTML.swift */; };
+		B491D71E1E63780500F3809D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E877711E3F922E0028782B /* Network.swift */; };
+		B491D71F1E63780600F3809D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E877711E3F922E0028782B /* Network.swift */; };
+		B491D7201E63781C00F3809D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8773D1E3F8CEA0028782B /* AppDelegate.swift */; };
+		B491D7211E63781D00F3809D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8773D1E3F8CEA0028782B /* AppDelegate.swift */; };
+		B491D7221E63785100F3809D /* ManfreddsAirport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4E877441E3F8CEA0028782B /* ManfreddsAirport.xcdatamodeld */; };
+		B491D7231E63785200F3809D /* ManfreddsAirport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4E877441E3F8CEA0028782B /* ManfreddsAirport.xcdatamodeld */; };
 		B4E8773E1E3F8CEA0028782B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8773D1E3F8CEA0028782B /* AppDelegate.swift */; };
 		B4E877401E3F8CEA0028782B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8773F1E3F8CEA0028782B /* ViewController.swift */; };
 		B4E877431E3F8CEA0028782B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E877411E3F8CEA0028782B /* Main.storyboard */; };
@@ -24,6 +30,9 @@
 		B4E877561E3F8CEA0028782B /* ManfreddsAirportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E877551E3F8CEA0028782B /* ManfreddsAirportTests.swift */; };
 		B4E877611E3F8CEA0028782B /* ManfreddsAirportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E877601E3F8CEA0028782B /* ManfreddsAirportUITests.swift */; };
 		B4E877721E3F922E0028782B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E877711E3F922E0028782B /* Network.swift */; };
+		B4EE80E81E5E4FF100ABA754 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */; };
+		B4EE80E91E5E4FF100ABA754 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */; };
+		B4EE80EA1E5E4FF100ABA754 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +72,7 @@
 		B4E877601E3F8CEA0028782B /* ManfreddsAirportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManfreddsAirportUITests.swift; sourceTree = "<group>"; };
 		B4E877621E3F8CEA0028782B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4E877711E3F922E0028782B /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,16 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				B4E877441E3F8CEA0028782B /* ManfreddsAirport.xcdatamodeld */,
-				B42A869E1E5CE8C600621A31 /* Models */,
+				B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */,
 			);
 			name = CoreData;
-			sourceTree = "<group>";
-		};
-		B42A869E1E5CE8C600621A31 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		B49077BD1E40D49F00FF45AB /* Base */ = {
@@ -318,6 +321,7 @@
 				B4E877401E3F8CEA0028782B /* ViewController.swift in Sources */,
 				B46F1AB21E54B852007D676B /* GetGitHubHTML.swift in Sources */,
 				B4E8773E1E3F8CEA0028782B /* AppDelegate.swift in Sources */,
+				B4EE80E81E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
 				B49077BF1E40D4C100FF45AB /* GetW3CHTML.swift in Sources */,
 				B4E877721E3F922E0028782B /* Network.swift in Sources */,
 				B42A869A1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
@@ -329,8 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B491D7201E63781C00F3809D /* AppDelegate.swift in Sources */,
+				B491D71E1E63780500F3809D /* Network.swift in Sources */,
+				B4EE80E91E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
 				B42A869B1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
 				B46F1AB31E54B852007D676B /* GetGitHubHTML.swift in Sources */,
+				B491D7221E63785100F3809D /* ManfreddsAirport.xcdatamodeld in Sources */,
 				B4E877561E3F8CEA0028782B /* ManfreddsAirportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,8 +347,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B491D7211E63781D00F3809D /* AppDelegate.swift in Sources */,
+				B491D71F1E63780600F3809D /* Network.swift in Sources */,
+				B4EE80EA1E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
 				B42A869C1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
 				B46F1AB41E54B852007D676B /* GetGitHubHTML.swift in Sources */,
+				B491D7231E63785200F3809D /* ManfreddsAirport.xcdatamodeld in Sources */,
 				B4E877611E3F8CEA0028782B /* ManfreddsAirportUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

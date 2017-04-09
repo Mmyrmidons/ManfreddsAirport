@@ -8,30 +8,23 @@
 
 import Foundation
 
+enum NodeJSError: Error {
+    case NodeJSFailure
+}
+
 class GetNodeJSHTML : Network {
-    var request:URLRequest
-    
-    override init?() {
+    init(success successCallback: @escaping HTMLStringCallback, failure failureCallback: @escaping VoidCallback) {
         let url = URL(string: Domain.NodeJS)!
-
-        self.request = URLRequest(url: url)
-        self.request.httpMethod = HTTPMethod.GET
-
-        super.init()
-    }
-    
-    func fetch(success successCallback: @escaping NetworkCallback, failure failureCallback: @escaping VoidCallback) {
-        super.fetch(request: request, callback: { (data, response, error) in
-            guard let responseHTML = String(data: data!, encoding: String.Encoding.utf8) else {
-                if let responseError = error {
-                    print(responseError.localizedDescription)
-                }
-                
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = HTTPMethod.GET
+        
+        super.init(request: request, callback: { (data, response, error) in
+            guard error == nil, let responseHTML = String(data: data!, encoding: String.Encoding.utf8) else {
                 failureCallback()
-
                 return
             }
-
+            
             successCallback(responseHTML)
         })
     }
