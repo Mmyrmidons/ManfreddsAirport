@@ -1,0 +1,264 @@
+body {
+    font: 76%/162% "Franklin Gothic Medium", sans-serif;
+    margin: 0;
+}
+
+.transliterationPartial {
+	width: 364px;
+}
+
+.translationPartial {
+	width: 364px;
+}
+
+.glossaryPartial {
+	width: 260px;
+}
+
+.hollyphant {
+	font-weight: bold;
+	color: goldenrod;
+	margin-bottom: 6px;
+}
+
+.sirine {
+	font-weight: bold;
+	color: goldenrod;
+	margin-bottom: 6px;	
+}
+
+.planetar {
+	font-weight: bold;
+	color: goldenrod;
+	margin-bottom: 6px;
+}
+
+.hollyphant input,
+.sirine input,
+.planetar input {
+	background-color: #222222;
+	color: goldenrod;
+	border: 1px solid deeppink;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	margin-left: 6px;
+}
+
+.aloysius {
+    color: mistyrose;
+    margin: 0 auto;
+    padding-top: 90px;
+    width: 1024px;
+}
+
+.aloysius > div {
+	padding: 6px;
+	background-color: black;
+	float: left;
+	color: mistyrose;
+}
+
+.beatrix {
+    color: skyblue;
+}
+
+.pedipalp {
+	background-color: cornflowerblue;
+    margin: 0 auto;
+    width: 1024px;
+    height: 190px;
+    position: relative;
+}
+
+.tarrasque {
+	position: fixed;
+	margin: 0 auto;
+	width: 1024px;
+	height: 90px;
+}
+
+.diakk {
+	background-color: black;
+	width: 377px;
+	height: 90px;
+	float: left;
+}
+
+.diakk .lemma {
+    color: orangered;
+    float: left;
+    margin-right: 0.5em;
+    text-align: right;
+    width: 130px;
+}
+
+.diakk .def {
+    float: left;
+    color: lightgreen;
+}
+
+.diakk .pos {
+    color: deeppink;
+    margin-right: 0.5em;
+}
+
+.dicLemma {
+    color: orangered;
+    font-weight: bold;
+}
+.dicPos {
+    color: deeppink;
+    font-weight: bold;
+}
+
+.dicLabel {
+}
+
+.galebDuhr {
+	background-color: yellow;
+	width: 377px;
+	height: 90px;
+	float: right;
+	margin: 0 auto;
+}
+
+/*
+body {
+    background-color: black;
+    border-top: 9px solid deeppink;
+    font: 76%/162% "Franklin Gothic Medium",sans-serif;
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: 0 none;
+}
+a.rounded {
+    background: black none repeat scroll 0 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    color: goldenrod;
+    text-decoration: none;
+}
+a.rounded span {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: -1px 1px;
+    padding: 0 2px;
+}
+a.rounded:hover {
+    background: deeppink none repeat scroll 0 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    color: black;
+}
+a.rounded:hover span {
+    border-bottom: 1px solid deeppink;
+    border-top: 1px solid deeppink;
+}
+#corpus {
+    position: absolute;
+    visibility: visible;
+    width: 800px;
+    z-index: 4;
+}
+#yevvyCorpus {
+    position: absolute;
+    visibility: visible;
+    width: 274px;
+}
+#mannyCorpus {
+    position: absolute;
+    visibility: visible;
+    width: 274px;
+}
+#yevvyGlossary, #mannyGlossary, #yevvyContents, #mannyContents {
+    position: absolute;
+    visibility: hidden;
+    width: 274px;
+}
+#yevvyGlossary #glossaryTable {
+    width: 274px;
+}
+#blog {
+    position: absolute;
+    visibility: hidden;
+    z-index: 9;
+}
+#toptabs {
+    padding: 0 3em 1ex 0;
+}
+#mannysDef {
+    float: left;
+    text-align: center;
+    width: 380px;
+}
+#ivo {
+    border-top: 9px solid goldenrod;
+    height: 9px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+#aloysius table {
+    margin: 0 auto;
+    width: 800px;
+}
+#aloysius .def {
+    color: lightgreen;
+}
+#amelia {
+    padding: 2ex 1em;
+    text-align: right;
+}
+#amelia select {
+    font: 86%/100% "Franklin Gothic Medium",sans-serif;
+}
+.yellow {
+}
+.otterley {
+}
+.donimo {
+    color: skyblue;
+}
+.pandora {
+    border-right: 1px dashed deeppink;
+    overflow: hidden;
+    padding: 1ex 0.5em;
+    width: 300px;
+}
+.pandora a {
+    color: skyblue;
+    text-decoration: none;
+}
+.pandora a:hover {
+    color: lightgreen;
+    text-decoration: none;
+}
+#cecily {
+}
+.lorelei {
+    border-bottom: 1px dashed deeppink;
+    border-top: 1px dashed deeppink;
+    color: goldenrod;
+    font-size: 120%;
+    font-style: italic;
+    padding: 0.5ex 1em;
+}
+input.matchbox {
+    font: 100%/100% "Franklin Gothic Medium",sans-serif;
+    margin-bottom: 1ex;
+    width: 180px;
+}
+input.hotwheels {
+    font: 100%/100% "Franklin Gothic Medium",sans-serif;
+    margin-bottom: 1ex;
+    width: 30px;
+}
+submit {
+    font: 76%/100% "Franklin Gothic Medium",sans-serif;
+    margin-bottom: 1ex;
+}
+*/

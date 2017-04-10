@@ -1,0 +1,12 @@
+<!ELEMENT TEI.2 ANY>
+
+<!ENTITY h "&#x1E2B;">
+<!ENTITY H "&#x1E2A;">
+<!ENTITY g "&#x011D;">
+<!ENTITY G "&#x011C;">
+<!ENTITY c "&#x0161;">
+<!ENTITY C "&#x0160;">
+
+<!ENTITY ki "(ki)">
+<!ENTITY d "(d)">
+<!ENTITY mucen "(mu&#x161;en)">
