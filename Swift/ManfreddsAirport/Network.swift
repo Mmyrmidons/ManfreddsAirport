@@ -19,6 +19,7 @@ enum Domain {
     static let W3 = "https://www.w3.org/"
     static let GitHub = "https://github.com/"
     static let WFMU = "https://wfmu.org/"
+    static let Tuskss = "http://localhost:3099"
 }
 
 enum HTTPMethod {
@@ -29,7 +30,7 @@ enum HTTPMethod {
 }
 
 typealias URLSessionCallback = (Data?, URLResponse?, Error?) -> ()
-typealias HTMLStringCallback = (String) -> ()
+typealias StringCallback = (String) -> ()
 
 class Network {
     init() {}

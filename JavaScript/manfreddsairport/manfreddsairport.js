@@ -1,7 +1,10 @@
 var express = require('express')
 var app = express()
+var https = require('https')
+var bodyParser = require('body-parser')
+var fs = require('fs')
 var handlebars = require('express-handlebars').create({
-	defaultLayout: 'main',
+	defaultLayout: 'myrkridian',
 	helpers: {
 		section: function(name, options) {
 			if (!this._sections)
@@ -12,7 +15,8 @@ var handlebars = require('express-handlebars').create({
 		}
 	}	
 })
-var hiMissTikkie = require('./modz/hiMissTikkie.js')
+var myrkridian = require('./modz/myrkridian.js')
+var cats = require('./modz/cats.js')
 var sumer = require('./sumer/sumer.js')
 
 app.engine('handlebars', handlebars.engine)
@@ -20,13 +24,11 @@ app.engine('handlebars', handlebars.engine)
 app.set('port', process.env.PORT || 3099)
 app.set('view engine', 'handlebars')
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', function(req, res) {
-	res.render('index', {
-		hiMissTikkie: hiMissTikkie.sayHiToMissTikkie
-	})
-})
+app.get('/', myrkridian.unleashTheMyrkridia)
 
 app.get('/headers', function(req, res) {
 	res.set('Content-Type', 'text/plain')
@@ -51,16 +53,10 @@ app.get('/myth', function(req, res) {
 	res.render('empty')
 })
 
-app.get('/api/cats', function(req, res) {
-	var cats = [
-		{manny: "Mistr Manny"},
-		{pooh: "Miss Pooh"},
-		{piglet: "Miss Piglet"},
-		{tashi: "Miss Tashi"}
-	]
-	
-	res.json(cats)
-})
+app.get('/api/cats', cats.getCats)    
+app.post('/api/cats', cats.postCats)
+app.put('/api/cats', cats.putCats)
+app.delete('/api/cats', cats.deleteCats)
 
 app.get('/sumer(/:trans)?', sumer.parseTrans)
 
@@ -78,4 +74,13 @@ app.use(function(err, req, res, next) {
 
 app.listen(app.get('port'), function() {
 	console.log("Welcome to Manfredd's Airport. All flights departing from port " + app.get('port'))
+})
+
+var options = {
+    key: fs.readFileSync(__dirname + '/ssl/manfreddsairport.pem'),
+    cert: fs.readFileSync(__dirname + '/ssl/manfreddsairport.crt')
+}
+
+https.createServer(options, app).listen(3098, function() {
+	console.log("All secure flights departing from port " + 3098)
 })

@@ -32,7 +32,7 @@ class CoreDataManager {
             
                 if fetchedPlaylists.count > 0, let fetchedPlaylist = fetchedPlaylists[0] as PlayingToday? {
                     let todaysComponents = NSCalendar.current.dateComponents([.day, .month, .year, .era], from: Date())
-                    let timestampedComonents = NSCalendar.current.dateComponents([.day, .month, .year, .era], from: fetchedPlaylist.timeStamp as! Date)
+                    let timestampedComonents = NSCalendar.current.dateComponents([.day, .month, .year, .era], from: fetchedPlaylist.timeStamp! as Date)
                     
                     if todaysComponents == timestampedComonents
                         { return fetchedPlaylist.jsonData as Data? }

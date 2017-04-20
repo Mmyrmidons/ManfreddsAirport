@@ -1,0 +1,54 @@
+/*
+darkorange
+magenta
+deeppink
+yellowgreen
+orangered
+gold
+skyblue
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	border-top: 9px solid orange;
+}
+#ivo {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 9px;
+	border-top: 9px solid deeppink;
+	overflow: hidden;
+}
+#aloysius {
+	margin: 4ex auto;
+	width: 900px;
+	height: 400px;
+	color: yellowgreen;
+}
+a {
+	color: skyblue;
+}
+a.satanLink img {
+	width: 75px;
+	height: 75px;
+	border: 1px solid skyblue;
+}
+img#myrkAss {
+	height: 90px;
+	width: 90px;
+}
+#missCallie {
+}
+h1 {
+	display: inline;
+	position: relative;
+	top: -30px;
+	left: 30px;
+}
+ol {
+	list-style-type: lower-roman;
+	display: block;
+}

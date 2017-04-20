@@ -1,31 +1,31 @@
 //
-//  GetNodeJSHTML.swift
+//  GetCats.swift
 //  ManfreddsAirport
 //
-//  Created by Dunc on 1/31/17.
+//  Created by Dunc on 4/11/17.
 //  Copyright © 2017 Mmyrmidons. All rights reserved.
 //
 
 import Foundation
 
-enum NodeJSError: Error {
-    case NodeJSFailure
+enum CatError: Error {
+    case CatVomit
 }
 
-class GetNodeJSHTML : Network {
+class GetCats : Network {
     init(success successCallback: @escaping StringCallback, failure failureCallback: @escaping VoidCallback) {
-        let url = URL(string: Domain.NodeJS)!
+        let url = URL(string: Domain.Tuskss + "/api/cats")!
         var request = URLRequest(url: url)
         
         request.httpMethod = HTTPMethod.GET
         
         super.init(request: request, callback: { (data, response, error) in
-            guard error == nil, let responseHTML = String(data: data!, encoding: String.Encoding.utf8) else {
+            guard error == nil, let responseString = String(data: data!, encoding: String.Encoding.utf8) else {
                 failureCallback()
                 return
             }
             
-            successCallback(responseHTML)
+            successCallback(responseString)
         })
     }
 }

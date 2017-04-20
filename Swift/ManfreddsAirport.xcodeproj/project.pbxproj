@@ -10,6 +10,18 @@
 		B42A869A1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */; };
 		B42A869B1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */; };
 		B42A869C1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */; };
+		B45259DF1E9CF8A200A6797F /* GetCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259DE1E9CF8A200A6797F /* GetCats.swift */; };
+		B45259E01E9CF8A200A6797F /* GetCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259DE1E9CF8A200A6797F /* GetCats.swift */; };
+		B45259E11E9CF8A200A6797F /* GetCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259DE1E9CF8A200A6797F /* GetCats.swift */; };
+		B45259E31E9E945100A6797F /* PostCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259E21E9E945000A6797F /* PostCats.swift */; };
+		B45259E41E9E945100A6797F /* PostCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259E21E9E945000A6797F /* PostCats.swift */; };
+		B45259E51E9E945100A6797F /* PostCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259E21E9E945000A6797F /* PostCats.swift */; };
+		B45259E81E9ED26500A6797F /* DeleteCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259E71E9ED26500A6797F /* DeleteCats.swift */; };
+		B45259E91E9ED26500A6797F /* DeleteCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259E71E9ED26500A6797F /* DeleteCats.swift */; };
+		B45259EA1E9ED26500A6797F /* DeleteCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259E71E9ED26500A6797F /* DeleteCats.swift */; };
+		B45259EC1E9ED43D00A6797F /* PutCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259EB1E9ED43D00A6797F /* PutCats.swift */; };
+		B45259ED1E9ED43D00A6797F /* PutCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259EB1E9ED43D00A6797F /* PutCats.swift */; };
+		B45259EE1E9ED43D00A6797F /* PutCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45259EB1E9ED43D00A6797F /* PutCats.swift */; };
 		B46F1AB21E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
 		B46F1AB31E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
 		B46F1AB41E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
@@ -54,6 +66,10 @@
 
 /* Begin PBXFileReference section */
 		B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWhatsPlayingTodayOnWFMU.swift; sourceTree = "<group>"; };
+		B45259DE1E9CF8A200A6797F /* GetCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCats.swift; sourceTree = "<group>"; };
+		B45259E21E9E945000A6797F /* PostCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCats.swift; sourceTree = "<group>"; };
+		B45259E71E9ED26500A6797F /* DeleteCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCats.swift; sourceTree = "<group>"; };
+		B45259EB1E9ED43D00A6797F /* PutCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutCats.swift; sourceTree = "<group>"; };
 		B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGitHubHTML.swift; sourceTree = "<group>"; };
 		B49077BB1E40D23C00FF45AB /* GetNodeJSHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNodeJSHTML.swift; sourceTree = "<group>"; };
 		B49077BE1E40D4C100FF45AB /* GetW3CHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetW3CHTML.swift; sourceTree = "<group>"; };
@@ -107,6 +123,17 @@
 				B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		B45259E61E9ED1DC00A6797F /* Cats */ = {
+			isa = PBXGroup;
+			children = (
+				B45259DE1E9CF8A200A6797F /* GetCats.swift */,
+				B45259E21E9E945000A6797F /* PostCats.swift */,
+				B45259EB1E9ED43D00A6797F /* PutCats.swift */,
+				B45259E71E9ED26500A6797F /* DeleteCats.swift */,
+			);
+			name = Cats;
 			sourceTree = "<group>";
 		};
 		B49077BD1E40D49F00FF45AB /* Base */ = {
@@ -174,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B49077BD1E40D49F00FF45AB /* Base */,
+				B45259E61E9ED1DC00A6797F /* Cats */,
 				B49077BB1E40D23C00FF45AB /* GetNodeJSHTML.swift */,
 				B49077BE1E40D4C100FF45AB /* GetW3CHTML.swift */,
 				B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */,
@@ -324,6 +352,10 @@
 				B4EE80E81E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
 				B49077BF1E40D4C100FF45AB /* GetW3CHTML.swift in Sources */,
 				B4E877721E3F922E0028782B /* Network.swift in Sources */,
+				B45259EC1E9ED43D00A6797F /* PutCats.swift in Sources */,
+				B45259DF1E9CF8A200A6797F /* GetCats.swift in Sources */,
+				B45259E31E9E945100A6797F /* PostCats.swift in Sources */,
+				B45259E81E9ED26500A6797F /* DeleteCats.swift in Sources */,
 				B42A869A1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
 				B4E877461E3F8CEA0028782B /* ManfreddsAirport.xcdatamodeld in Sources */,
 			);
@@ -334,12 +366,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B491D7201E63781C00F3809D /* AppDelegate.swift in Sources */,
+				B45259E91E9ED26500A6797F /* DeleteCats.swift in Sources */,
+				B45259ED1E9ED43D00A6797F /* PutCats.swift in Sources */,
 				B491D71E1E63780500F3809D /* Network.swift in Sources */,
 				B4EE80E91E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
+				B45259E01E9CF8A200A6797F /* GetCats.swift in Sources */,
 				B42A869B1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
 				B46F1AB31E54B852007D676B /* GetGitHubHTML.swift in Sources */,
 				B491D7221E63785100F3809D /* ManfreddsAirport.xcdatamodeld in Sources */,
 				B4E877561E3F8CEA0028782B /* ManfreddsAirportTests.swift in Sources */,
+				B45259E41E9E945100A6797F /* PostCats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +384,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B491D7211E63781D00F3809D /* AppDelegate.swift in Sources */,
+				B45259EA1E9ED26500A6797F /* DeleteCats.swift in Sources */,
+				B45259EE1E9ED43D00A6797F /* PutCats.swift in Sources */,
 				B491D71F1E63780600F3809D /* Network.swift in Sources */,
 				B4EE80EA1E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
+				B45259E11E9CF8A200A6797F /* GetCats.swift in Sources */,
 				B42A869C1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
 				B46F1AB41E54B852007D676B /* GetGitHubHTML.swift in Sources */,
 				B491D7231E63785200F3809D /* ManfreddsAirport.xcdatamodeld in Sources */,
 				B4E877611E3F8CEA0028782B /* ManfreddsAirportUITests.swift in Sources */,
+				B45259E51E9E945100A6797F /* PostCats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
