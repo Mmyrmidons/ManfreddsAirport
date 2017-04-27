@@ -41,16 +41,22 @@ app.get('/headers', function(req, res) {
 	res.send(s)
 })
 
-app.get('/poopie', function(req, res) {
-	res.render('empty')
+app.get('/yevvie', function(req, res) {
+	res.render('yevvie', {
+        layout: 'boring'
+    })
 })
 
 app.get('/spudandal', function(req, res) {
-	res.render('empty')
+	res.render('spudandal', {
+        layout: 'boring'
+    })
 })
 
 app.get('/myth', function(req, res) {
-	res.render('empty')
+	res.render('myth', {
+        layout: 'boring'
+    })
 })
 
 app.get('/api/cats', cats.getCats)    

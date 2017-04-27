@@ -54,7 +54,7 @@
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:variable name="yevvysId" select="substring-after(@corresp, '.')"/>
-			<div class="persephone" onmouseover="this.style.color = 'lightsalmon'; document.getElementById('{$yevvysId}').style.color = 'lightsalmon';" onmouseout="this.style.color = 'mistyrose'; document.getElementById('{$yevvysId}').style.color = 'mistyrose';">
+			<div class="persephone" onmouseover="sumer.lightSalmon(this, '{$yevvysId}')" onmouseout="sumer.mistierRose(this, '{$yevvysId}')">
 				<span class="beatrix"><xsl:value-of select="@n"/></span>
 				<xsl:text> - </xsl:text>
 				<xsl:apply-templates select="w"/>

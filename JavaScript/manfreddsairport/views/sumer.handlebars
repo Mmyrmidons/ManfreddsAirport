@@ -1,36 +1,38 @@
+<div class="kampfult"></div>
 <div class="pedipalp">
 	<div class="tarrasque">
+		<div class="planetar">
+            <form action="/action_page.php">
+                <span class="galebDuhr">filter =</span>
+                <input type="text" class="dracolisk" value=""/>
+            </form> 
+        </div>
+		<div class="hellcat">{{> (titlePartial)}}</div>
 		<div class="diakk"></div>
-		<div class="galebDuhr"></div>
+        <a href="#" class="firedrake">+</a>
 	</div>
 	<div class="aloysius">
-		<div class="transliterationPartial">
-			<div class="hollyphant">
-				<form action="/action_page.php">
-					filter transliteration: <input type="text" class="dracolisk" value=""/>
-				</form> 
-			</div>
+        <div class="disenchanter">{{> (tableOfContentsPartial)}}</div>
+        <div class="transliterationPartial">
 			{{> (transliterationPartial)}}</div>
 		<div class="translationPartial">
-			<div class="sirine">
-				<form action="/action_page.php">
-					filter translation: <input type="text" class="dracolisk" value=""/>
-				</form> 
-			</div>
 			{{> (translationPartial)}}</div>
 		<div class="glossaryPartial">
-			<div class="planetar">
-				<form action="/action_page.php">
-					filter glossary: <input type="text" class="dracolisk" value=""/>
-				</form> 
-			</div>
-			{{> (glossaryPartial)}}
+            <div class="iceLizard">
+                {{> (glossaryPartial)}}
+            </div>
 		</div>
 	</div>
+    <div class="swanmay">Kretizt</div>
 </div>
+
+{{#section 'title'}}
+    The Heron and the Turtle
+{{/section}}
 
 {{#section 'cssLinks'}}
 	<link rel="stylesheet" type="text/css" href="/css/sumer.css">
+    <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
 {{/section}}
 
 {{#section 'jsLinks'}}

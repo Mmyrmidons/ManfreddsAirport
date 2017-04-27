@@ -1,22 +1,12 @@
-    <div id="ivo"></div><div id="aloysius">
-    <div id="missCallie"><img src="/img/myrkass.jpg" id="myrkAss" style="border: 1px solid {{myrkridianAura}}"/><h1>{{path}}</h1></div>
-    <ol>
+<div id="ivo"></div><div id="aloysius">
+<div id="missCallie"><img src="/img/myrkridian/myrkass.jpg" id="myrkAss" style="border: 1px solid {{myrkridianAura}}"/><h1>{{path}}</h1></div>
+<ol>
+    {{#each paths}}
+        <li><a href="{{.}}">{{.}}</a></li>
+    {{/each}}
 
-        {{#each paths}}
-            <li><a href="{{.}}">{{.}}</a></li>
-        {{/each}}
-
-        {{#each things}}
-            <li><a href="{{.}}">{{.}}</a></li>
-        {{/each}}
-        
-<!--
-        files.forEach(function(fileName) {
-    if (fileName.charAt(0) !== '.' && fileName != 'servers/') {
-      res.write('<li><a href="' +
-        escapeHtml(fileName) + '">' +
-        escapeHtml(fileName) + '</a></li>');
-    }
-  });
--->
-    </ol></div>
+    {{#each things}}
+        <li><a href="{{.}}">{{.}}</a></li>
+    {{/each}}
+</ol>
+</div>

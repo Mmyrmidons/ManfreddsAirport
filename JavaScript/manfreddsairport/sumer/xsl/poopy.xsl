@@ -21,8 +21,8 @@
 	</xsl:variable>
 	
 	<tr>
-		<td class="dicLemma"><xsl:value-of select="$lemma"/></td>
-		<td class="dicPos">
+		<td valign="top" class="dicLemma"><xsl:value-of select="$lemma"/></td>
+		<td valign="top" class="dicPos">
 			<xsl:if test="@pos = 'AJ'">
 				adj
 			</xsl:if>
@@ -51,7 +51,7 @@
 				verb
 			</xsl:if>
 		</td>
-		<td class="dicLabel"><xsl:value-of select="@label"/></td>
+		<td valign="top" class="dicLabel"><xsl:value-of select="@label"/></td>
 	</tr>
 </xsl:template>
 

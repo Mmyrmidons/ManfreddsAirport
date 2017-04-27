@@ -1,43 +1,162 @@
 body {
     font: 76%/162% "Franklin Gothic Medium", sans-serif;
     margin: 0;
+    background-color: black;
+}
+
+a:focus {
+    outline:none;
 }
 
 .transliterationPartial {
 	width: 364px;
+    padding: 0 6px;
+    margin: 18px 0;
+	float: left;
+	color: mistyrose;
 }
 
 .translationPartial {
 	width: 364px;
+    padding: 0 6px;
+    margin: 18px 0;
+	float: left;
+	color: mistyrose;
 }
 
 .glossaryPartial {
-	width: 260px;
+	width: 272px;
+    margin: 18px 0;
+/*    height: 100%;*/
+    overflow: hidden;
+}
+
+.iceLizard {
+/*    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));*/
+    padding: 0 24px 0 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+#glossaryTable {
+}
+
+#glossaryTable td {
+    padding: 0 6px;
+}
+
+.disenchanter {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: orchid;
+    position: absolute;
+    left: 1024px;
+    width: 1024px;
+    height: 100%;
+    padding-right: 40px;
+    z-index: 198;
+    border: 1px solid springgreen;
+}
+
+.disenchanter p {
+    font-size: 14px;
+}
+
+.disenchanter a {
+    text-decoration: none;
+    color: lavender;
+}
+
+.kampfult {
+    background-color: firebrick;
+    position: absolute;
+    z-index: 98;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.tarrasque .firedrake {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    vertical-align: middle;
+    color: skyblue;
+    padding: 6px;
+    text-decoration: none;
+    font-family: 'Macondo', cursive;
+    z-index: 298;
+    font-size: 36px
+}
+
+.slaad {
+    float: left;
+	width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 18px 24px 18px 18px;
+}
+
+.slaad p {
+    margin: 12px 0;
+}
+
+.slaad a {
+    display: block;
+    padding: 3px 0;
 }
 
 .hollyphant {
-	font-weight: bold;
-	color: goldenrod;
-	margin-bottom: 6px;
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    width: 290px;
 }
 
 .sirine {
-	font-weight: bold;
-	color: goldenrod;
-	margin-bottom: 6px;	
+    float: left;
+    width: 260px;
+    height: 100%;
+    padding: 18px 12px;
+}
+
+.sirine a {
+    color: thistle;
+    display: block;
+    margin: 12px 0;
+}
+
+.hellcat {
+    font-size: 24px;
+    font-family: 'Macondo', cursive;
+    padding: 21px 6px 6px 6px;
+    color: goldenrod;
+    width: 70%;
 }
 
 .planetar {
 	font-weight: bold;
+    font-size: 18px;
+    font-family: 'Macondo', cursive;
 	color: goldenrod;
-	margin-bottom: 6px;
+    float: right;
+    margin: 30px 72px 0 0;
 }
 
-.hollyphant input,
-.sirine input,
-.planetar input {
+.galebDuhr {
+    position: relative;
+    top: -4px;
+}
+
+.dracolisk {
+    font-size: 24px;
+	width: 190px;
+    padding-top: 3px;
 	background-color: #222222;
-	color: goldenrod;
+	color: mistyrose;
 	border: 1px solid deeppink;
 	appearance: none;
 	box-shadow: none;
@@ -48,15 +167,9 @@ body {
 .aloysius {
     color: mistyrose;
     margin: 0 auto;
-    padding-top: 90px;
     width: 1024px;
-}
-
-.aloysius > div {
-	padding: 6px;
-	background-color: black;
-	float: left;
-	color: mistyrose;
+    padding-top: 90px;
+    height: 1024px;
 }
 
 .beatrix {
@@ -64,10 +177,10 @@ body {
 }
 
 .pedipalp {
-	background-color: cornflowerblue;
     margin: 0 auto;
     width: 1024px;
-    height: 190px;
+    height: 100%;
+    overflow: hidden;
     position: relative;
 }
 
@@ -76,16 +189,19 @@ body {
 	margin: 0 auto;
 	width: 1024px;
 	height: 90px;
+    background-color: black;
+    border-bottom: 1px solid deeppink;
 }
 
 .diakk {
 	background-color: black;
 	width: 377px;
-	height: 90px;
-	float: left;
+    font-size: 14px;
+    padding-top: 9px;
+    float: left;
 }
 
-.diakk .lemma {
+.lemma {
     color: orangered;
     float: left;
     margin-right: 0.5em;
@@ -93,12 +209,12 @@ body {
     width: 130px;
 }
 
-.diakk .def {
+.def {
     float: left;
     color: lightgreen;
 }
 
-.diakk .pos {
+.pos {
     color: deeppink;
     margin-right: 0.5em;
 }
@@ -113,15 +229,34 @@ body {
 }
 
 .dicLabel {
+    color: lightgreen;
+    font-style: italic;
 }
 
-.galebDuhr {
-	background-color: yellow;
-	width: 377px;
-	height: 90px;
-	float: right;
-	margin: 0 auto;
+.githzerai .dicLemma,
+.githzerai .dicPos,
+.githzerai .dicLabel {
+    color: mistyrose;
 }
+
+.swanmay {
+    background-color: deeppink;
+    height: 98px;
+}
+
+.vilstrack * {
+    color: lightslategray;
+}
+
+.vilstrack .tarrasque {
+    border-bottom: 1px solid lightslategray;
+}
+
+.vilstrack input {
+    border: 1px solid lightslategray;
+}
+
+
 
 /*
 body {

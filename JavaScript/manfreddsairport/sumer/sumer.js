@@ -7,12 +7,16 @@ exports.parseTrans = function(req, res, next) {
 	var transla = req.params.trans ? "t." + req.params.trans : "t.1.1.1"
 	var translaXmlPath = 'sumer/translations/' + transla + '.xml'
 	var glossary = transli.replace("c.", "g.")
+	var title = transli.replace("c.", "a.")
 
 	var renderTrans = function() {
 		res.render('sumer', {
-	   		transliterationPartial: function() { return transli },
-	   		translationPartial: function() { return transla },
-	   		glossaryPartial: function() { return glossary }
+            layout: 'boring',
+	   		transliterationPartial: function() { return 'sumer/' + transli },
+	   		translationPartial: function() { return 'sumer/' + transla },
+	   		glossaryPartial: function() { return 'sumer/' + glossary },
+	   		titlePartial: function() { return 'sumer/' + title },
+            tableOfContentsPartial: function() { return 'sumer/static/tableOfContents' }
 	   	})
 	}
 	
@@ -20,7 +24,7 @@ exports.parseTrans = function(req, res, next) {
 		var config = {
    			xsltPath: 'sumer/xsl/yevvy.xsl',
    			sourcePath: transliXmlPath,
-   			result: 'views/partials/' + transli + '.handlebars'
+   			result: 'views/partials/sumer/' + transli + '.handlebars'
 		}
 
 		xslt4node.transform(config, function(err) {
@@ -32,7 +36,7 @@ exports.parseTrans = function(req, res, next) {
    			config = {
    				xsltPath: 'sumer/xsl/poopy.xsl',
    				sourcePath: transliXmlPath,
-   				result: 'views/partials/' + glossary + '.handlebars'
+   				result: 'views/partials/sumer/' + glossary + '.handlebars'
    			}
 
    			xslt4node.transform(config, function(err) {
@@ -45,7 +49,7 @@ exports.parseTrans = function(req, res, next) {
 					config = {
    						xsltPath: 'sumer/xsl/manny.xsl',
    						sourcePath: translaXmlPath,
-   						result: 'views/partials/' + transla + '.handlebars'
+   						result: 'views/partials/sumer/' + transla + '.handlebars'
    					}
 	
    					xslt4node.transform(config, function(err) {
@@ -53,11 +57,24 @@ exports.parseTrans = function(req, res, next) {
 		   					console.log(err)
 		   					transla = "empty"
 		   				}
-		   			
-		   				renderTrans()
+
+                        config = {
+   					        xsltPath: 'sumer/xsl/gemineye.xsl',
+                            sourcePath: transliXmlPath,
+   					        result: 'views/partials/sumer/' + title + '.handlebars'
+   					    }
+
+                        xslt4node.transform(config, function(err) {
+   						   if (err) {
+                               console.log(err)
+                               transla = "static/empty"
+                           }
+		   				
+                            renderTrans()
+                        })
 		   			})
 				} else {
-					transla = "empty"
+					transla = "static/empty"
 					renderTrans()
 				}				
 			})
