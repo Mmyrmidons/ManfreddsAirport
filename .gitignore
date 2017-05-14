@@ -1,9 +1,9 @@
 # Manfredd's Airport
 
-public/pdf/
-public/things/
-views/partials/sumer/*
-!views/partials/sumer/static
+pdf/
+things/
+/JavaScript/manfreddsairport/views/partials/sumer/*
+!/JavaScript/manfreddsairport/views/partials/sumer/static
 
 # Packages #
 ############
