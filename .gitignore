@@ -1,7 +1,7 @@
 # Manfredd's Airport
 
-pdf/
-things/
+/JavaScript/manfreddsairport/public/pdf/
+/JavaScript/manfreddsairport/public/things/
 /JavaScript/manfreddsairport/views/partials/sumer/*
 !/JavaScript/manfreddsairport/views/partials/sumer/static
 
