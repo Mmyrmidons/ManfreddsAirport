@@ -46,36 +46,14 @@ a:focus {
     padding: 0 6px;
 }
 
-.disenchanter {
-    background-color: rgba(0, 0, 0, 0.95);
-    color: orchid;
+.kampfult {
+    background-color: black;
     position: absolute;
+    top: 90px;
     left: 1024px;
     width: 1024px;
-    height: 100%;
-    padding-right: 40px;
-    z-index: 198;
-    border: 1px solid springgreen;
-}
-
-.disenchanter p {
-    font-size: 14px;
-}
-
-.disenchanter a {
-    text-decoration: none;
-    color: lavender;
-}
-
-.kampfult {
-    background-color: firebrick;
-    position: absolute;
-    z-index: 98;
-    height: 100%;
-    width: 100%;
-    opacity: 0.5;
-    visibility: hidden;
-    overflow: hidden;
+    height: 100vh;
+    z-index: 298;
 }
 
 .tarrasque .firedrake {
@@ -92,41 +70,153 @@ a:focus {
     font-size: 36px
 }
 
-.slaad {
-    float: left;
-	width: 100%;
-    height: 100%;
-    overflow: auto;
-    padding: 18px 24px 18px 18px;
-}
-
-.slaad p {
-    margin: 12px 0;
-}
-
-.slaad a {
+.myconid {
     display: block;
-    padding: 3px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    vertical-align: middle;
+    color: mistyrose;
+    padding: 12px 6px;
+    text-decoration: none;
+    font-family: 'Macondo', cursive;
+    z-index: 298;
+    font-size: 18px;
+    width: 30px;
+}
+
+.opinicus {
+    position: absolute;
+    left: 0;
+    opacity: .0;    
+    font-size: 12px;
+    padding-top: px;
+    color: skyblue;
+}
+
+.gloomwing.opinicus {
+    opacity: 1;
+}
+.obliviax {
+    position: absolute;
+    right: 0;
+|}
+
+.gloomwing {
+    -webkit-animation: spin 0.3s linear infinite;
+    -moz-animation: spin 0.3s linear infinite;
+    animation: spin 0.3s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+.disenchanter {
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 90px;
+    left: 1024px;
+    width: 1024px;
+    height: 2048px;
+    padding-right: 40px;
+    z-index: 198;
+    border: 1px solid palegreen;
+}
+
+.disenchanter p {
+}
+
+.disenchanter a {
+    text-decoration: none;
+    color: black;
+}
+
+.vilstrack .disenchanter * {
 }
 
 .hollyphant {
-    float: left;
     overflow: hidden;
     height: 100%;
-    width: 290px;
+}
+
+.hollyphant > div {
+    display: inline-block;
+    position: absolute;
+}
+
+.hollyphant a {
+    display: block;
+}
+
+.hollyphant p {
+    background-color: black;
+    border: 1px solid chartreuse;
+    padding: 3px;
+    color: chartreuse;
+}
+
+.pernicon {
+    float: left;
+    color: black;
+}
+
+.redSlaad {
+    color: dodgerblue;
+    background-color: crimson;
+}
+
+.blueSlaad {
+    color: dodgerblue;
+    background-color: navy;
+}
+
+.deathSlaadi {
+    color: dodgerblue;
+    background-color: chartreuse;
+}
+
+.greenSlaad {
+    color: dodgerblue;
+    background-color: lime;
+}
+
+.greySlaadi {
+    color: dodgerblue;
+    background-color: lightslategrey;
+}
+
+.ssendam {
+    color: dodgerblue;
+    background-color: gold;
+}
+
+.ygorl {
+    color: dodgerblue;
+    background-color: orangered;
 }
 
 .sirine {
-    float: left;
-    width: 260px;
-    height: 100%;
+    height: 90px;
     padding: 18px 12px;
+    text-align: right;
+    overflow: visible;
 }
 
 .sirine a {
-    color: thistle;
-    display: block;
+/*    color: dodgerblue;*/
+    font-size: 12px;
     margin: 12px 0;
+    font-family: 'Macondo', cursive;
+}
+
+.vilstrack .sirine span {
+    color: thistle;
+    padding: 6px 18px;
+}
+
+.swanmay {
 }
 
 .hellcat {
@@ -236,15 +326,18 @@ a:focus {
 .githzerai .dicLemma,
 .githzerai .dicPos,
 .githzerai .dicLabel {
-    color: mistyrose;
+    color: paleturquoise;
 }
 
-.swanmay {
-    background-color: deeppink;
-    height: 98px;
+.vilstrack {
+/*
+    overflow: hidden;
+    height: 100%;
+*/
 }
 
-.vilstrack * {
+.vilstrack *,
+.vilstrack .mistyrose {
     color: lightslategray;
 }
 
@@ -256,7 +349,21 @@ a:focus {
     border: 1px solid lightslategray;
 }
 
+.mistyrose {
+    color: mistyrose;
+}
 
+.lightpink {
+    color: lightpink;
+}
+
+.lightsalmon {
+    color: lightsalmon;
+}
+
+em {
+    font-style: italic;
+}
 
 /*
 body {

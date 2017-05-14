@@ -54,31 +54,24 @@ var sumer = (function() {
         
         $('.firedrake').click(function(event) {
             var disenchanter = $('.disenchanter')
-            var left = disenchanter.css('left') == '464px' ? 1024 : 464
-            var symbol = disenchanter.css('left') == '464px' ? '+' : '-'
+            var leftBoundary = '0px'
+            var left = disenchanter.css('left') == leftBoundary ? 1024 : leftBoundary
+            var symbol = disenchanter.css('left') == leftBoundary ? '+' : '-'
             
+            $('html, body').addClass('vilstrack')
+
             disenchanter.animate({
                 left: left
             }, 377, function() {
                 $('.firedrake').text(symbol)
                 
-                if (disenchanter.css('left') == '464px') {
-                    $('.pedipalp').addClass('vilstrack')
-//                    $('.kampfult').css({visibility: 'visible'})
-//
-//                    $('html, body').css({
-//                        overflow: 'hidden',
-//                        height: '100%'
-//                    })
-                } else $('.pedipalp').removeClass('vilstrack')
+                if (disenchanter.css('left') == leftBoundary) {
+                    disableInteractions()
+                } else {
+                    $('html, body').removeClass('vilstrack')
+                    enableInteractions()
+                }
             })
-
-
-//            $('.tarrasque, .transliterationPartial, .translationPartial, .glossaryPartial').animate({
-//                opacity: 0.2
-//            }, 377, function() {
-//                disenchanter.css({'z-index': 100})
-//            })
             
             event.preventDefault()
         })
@@ -100,6 +93,7 @@ var sumer = (function() {
                 left: 1024
             }, 500, function() {
                 location.href = href
+                $('html, body').removeClass('vilstrack')
             })
             
             event.preventDefault()
@@ -118,18 +112,83 @@ var sumer = (function() {
 //            filterTrans(['x'])
 //        })
         
-        var firstLemma = $('.transliterationPartial span[title]').first();
-        
-        if (firstLemma) {
-            var firstLemmaTitle = firstLemma.attr('title')
+        $('.myconid').click(function(event) {
+            var trans = location.pathname.replace(/(\/sumer\/?)/g, '')
 
-            if (firstLemmaTitle) {
-                var firstLemmaParts = firstLemmaTitle.split(' ')
+            $('.opinicus').addClass('gloomwing')
+            obliviax()
+            
+            if (!trans)
+                trans = '1.1.1'
+            
+            $.post({
+                url: '/sumer/pdf',
+                data: {trans: trans}
+            }).done(function() {
+                $('.opinicus').removeClass('gloomwing')
+                window.open('../pdf/' + trans + '.pdf', '_blank')
+            }).fail(function(error) {
+                $('.opinicus').removeClass('gloomwing')
+                console.log(error.statusText)                
+            })
+            
+            event.preventDefault()
+        })
+
+        var firstTranslit = $('.transliterationPartial span[title]').first()
+                
+        if (firstTranslit) {
+            var firstTranslitTitle = firstTranslit.attr('title')
+
+            if (firstTranslitTitle) {
+                var firstTranslitParts = firstTranslitTitle.split(',')
         
-                if (firstLemmaParts && firstLemmaParts.length > 2)
-                    gloss(firstLemmaParts[0], firstLemmaParts[1], firstLemmaParts[2])
+                if (firstTranslitParts && firstTranslitParts.length > 2)
+                    gloss($.trim(firstTranslitParts[0]), $.trim(firstTranslitParts[1]), $.trim(firstTranslitParts[2]))
             }
         }
+        
+        var hollyphantIndex = 398;
+        
+        $('.hollyphant > div').draggable({
+            cursor: "grab",
+            start: function(event, ui) {
+                $(this).css('z-index', hollyphantIndex++)
+            }
+        })
+        
+        enableInteractions()
+    }
+    
+    var enableInteractions = function() {
+        $('.transliterationPartial span[title]').on('mouseover', glosser)
+        $('.transliterationPartial .persephone').on('mouseover', highlights.lightSalmon)
+        $('.transliterationPartial .persephone').on('mouseout', highlights.mistyRose)
+        $('.translationPartial .persephone').on('mouseover', highlights.lightPink)
+        $('.translationPartial .persephone').on('mouseout', highlights.mistierRose)
+        $('input').prop('disabled', false)
+    }
+    
+    var disableInteractions = function() {
+        $('.transliterationPartial span[title]').off('mouseover')
+        $('.transliterationPartial .persephone').off('mouseover')
+        $('.transliterationPartial .persephone').off('mouseout')
+        $('.translationPartial .persephone').off('mouseover')
+        $('.translationPartial .persephone').off('mouseout')
+        $('input').prop('disabled', true)
+    }
+    
+    var obliviax = function() {
+        var obliviaxNode = $('.obliviax')
+        
+        obliviaxNode.animate({
+            opacity: obliviaxNode.css('opacity') > 0.6 ? 0.6 : 0.9
+        }, 1800, function() {
+            if ($('.opinicus').hasClass('gloomwing'))
+                obliviax()
+            else
+                obliviaxNode.css('opacity', 1)
+        });
     }
     
     var filterTrans = function(wordArray) {
@@ -163,81 +222,99 @@ var sumer = (function() {
                     correspondingTranslation.hide()                    
                 }
             } else $(this).show()
-        })            
-    }
-
-    var highlightGlossaryWords = function(regexString) {
-        $('.dicLemma').each(function(i, tTag) {
-            var word = $(tTag).text()
-                
-            if (word && word.match(regexString))
-                $(tTag).parent().addClass('githzerai')
-            else
-                $(tTag).parent().removeClass('githzerai')     
         })
     }
-    
-    var createRegexString = function(mNode) {
+
+    var createRegex = function(mNode) {
         var regexString = ''
         
         mNode.find('span[title]').each(function(i, tTag) {
-            var words = $(tTag).text()
-            
-            if (words)
-                regexString += words.replace(/-/g, '|')
+            var title = $(tTag).attr('title')
+
+            if (title) {
+                var lemma = title.split(',')
+                
+                if (lemma && lemma.length > 0 && lemma[0].length > 0) {
+                    regexString += '|'                    
+                    regexString += lemma[0]
+                }
+            }
         })
         
-        return regexString
+        regexString += '$'
+        
+        return RegExp(regexString.replace(/^\|/, '^'))
+    }
+
+    var highlights = {
+        highlightGlossaryWords: function(regex) {
+            $('.dicLemma').each(function(i, tTag) {
+                var word = $(tTag).text()
+
+                if (word && word.match(regex))
+                    $(tTag).parent().addClass('githzerai')
+                else
+                    $(tTag).parent().removeClass('githzerai')
+            })
+            
+        },
+    
+        colorizeTransli: function(mThis, makeMisty) {
+            var oldColor = makeMisty ? 'lightsalmon' : 'mistyrose'
+            var newColor = makeMisty ? 'mistyrose' : 'lightsalmon'
+            var idParts = mThis.parent().attr('id') ? mThis.parent().attr('id').split('.') : null
+        
+            mThis.removeClass(oldColor).addClass(newColor)
+
+            if (idParts && idParts.length > 1)
+                $('#' + idParts[1]).removeClass(oldColor).addClass(newColor)
+        },
+    
+        lightSalmon: function() {
+            highlights.colorizeTransli($(this), false)
+            highlights.highlightGlossaryWords(createRegex($(this)))
+        },
+
+        mistyRose: function() {
+            highlights.colorizeTransli($(this), true)
+            $('#glossaryTable tr').removeClass('githzerai')
+        },
+        
+        colorizeTransla: function(mThis, makeMisty) {
+            var oldColor = makeMisty ? 'lightpink' : 'mistyrose'
+            var newColor = makeMisty ? 'mistyrose' : 'lightpink'
+            
+            mThis.removeClass(oldColor).addClass(newColor)
+        
+            var transli = $('.transliterationPartial > div[id$="' + mThis.attr('id') +  '"]')
+        
+            if (transli)
+                transli.find('.persephone').removeClass(oldColor).addClass(newColor)
+        },
+
+        lightPink: function() {
+            var selectorString = '.transliterationPartial > div[id$="' + $(this).attr('id') +  '"]'
+            var transliNode = $(selectorString)
+            
+            highlights.colorizeTransla($(this), false)
+            highlights.highlightGlossaryWords(createRegex(transliNode))
+        },
+    
+        mistierRose: function() {
+            highlights.colorizeTransla($(this), true)
+            $('#glossaryTable tr').removeClass('githzerai')
+        }
     }
     
-	var lightSalmon = function(tag, id) {
-        var mTag = $(tag)
-        mTag.css({color: 'lightsalmon'})
+	var glosser = function() {
+        var title = $(this).attr('title')
         
-        if (id)
-            $('#' + id).css({color: 'lightsalmon'})
-        
-        highlightGlossaryWords(createRegexString(mTag))
-    }
-
-    var lightPink = function(tag, id) {
-		tag.style.color = 'lightpink';	
-		idRoot = document.getElementById(id);
-
-        var regexString = ''
-                
-		for (i = 0; i < idRoot.childNodes.length; i++) {
-			node = idRoot.childNodes[i];
-			if (node.nodeName == 'DIV') {
-				node.style.color = 'lightpink';
-                regexString += createRegexString($(node))
-            }
-		}
-
-        highlightGlossaryWords(regexString)
-    }
-	
-	var mistyRose = function(tag, id) {
-		tag.style.color = 'mistyrose';
-		idRoot = document.getElementById(id);
-
-		for (i = 0; i < idRoot.childNodes.length; i++) {
-			node = idRoot.childNodes[i];
-			if (node.nodeName == 'DIV')
-				node.style.color = 'mistyrose';
-		}
-	
-        $('#glossaryTable tr').removeClass('githzerai')
-	}
-
-    var mistierRose = function(tag, id) {
-        tag.style.color = 'mistyrose';
-		idRoot = document.getElementById(id);
-        
-        if (idRoot)
-            idRoot.style.color = 'mistyrose'
-        
-        $('#glossaryTable tr').removeClass('githzerai')
+        if (title) {
+            var titleParts = title.split(',')
+            
+            if (titleParts && titleParts.length > 2)
+                gloss($.trim(titleParts[0]), $.trim(titleParts[1]), $.trim(titleParts[2]))
+        }
 	}
 
 	var gloss = function(lemma, pos, label) {
@@ -245,11 +322,6 @@ var sumer = (function() {
 	}
 	
     return {
-        lightSalmon: lightSalmon,
-        lightPink: lightPink,
-        mistyRose: mistyRose,
-        mistierRose: mistierRose,
-        gloss: gloss,
 		onReady: onReady
     }
 })()

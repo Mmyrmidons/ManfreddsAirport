@@ -1,0 +1,6 @@
+framework module Pods_ManfreddsAirport {
+  umbrella header "Pods-ManfreddsAirport-umbrella.h"
+
+  export *
+  module * { export * }
+}

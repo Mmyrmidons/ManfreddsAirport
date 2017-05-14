@@ -12,7 +12,9 @@ var cats = [
     {lukey: "Lukey"},
     {tomato: "Tomatie"},
     {albert: "Albie"},
-    {spud: "Hey Bud"}
+    {spud: "Hey Bud"},
+    {tygerTyger: "Tyger Tyger"},
+    {rexie: "Lord of Hillcrest Avenue"}
 ]
     
 exports.getCats = function(req, res) {	

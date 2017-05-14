@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40A5CAB32D49F85D34D07A66 /* Pods_ManfreddsAirportTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450C82196A01786E4183272B /* Pods_ManfreddsAirportTests.framework */; };
+		8207A650D8BD2C075635BAD3 /* Pods_ManfreddsAirport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C885A48388EA03911A1DF90 /* Pods_ManfreddsAirport.framework */; };
 		B42A869A1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */; };
 		B42A869B1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */; };
 		B42A869C1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */; };
@@ -25,6 +27,10 @@
 		B46F1AB21E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
 		B46F1AB31E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
 		B46F1AB41E54B852007D676B /* GetGitHubHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */; };
+		B47A7AB21EC4BF590005D9D3 /* Aegyptus313.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B47A7AB11EC4BF590005D9D3 /* Aegyptus313.ttf */; };
+		B47A7AB41EC4BFE10005D9D3 /* AegyptusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A7AB31EC4BFE10005D9D3 /* AegyptusViewController.swift */; };
+		B47A7AB51EC4BFE10005D9D3 /* AegyptusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A7AB31EC4BFE10005D9D3 /* AegyptusViewController.swift */; };
+		B47A7AB61EC4BFE10005D9D3 /* AegyptusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A7AB31EC4BFE10005D9D3 /* AegyptusViewController.swift */; };
 		B49077BC1E40D23C00FF45AB /* GetNodeJSHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49077BB1E40D23C00FF45AB /* GetNodeJSHTML.swift */; };
 		B49077BF1E40D4C100FF45AB /* GetW3CHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49077BE1E40D4C100FF45AB /* GetW3CHTML.swift */; };
 		B491D71E1E63780500F3809D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E877711E3F922E0028782B /* Network.swift */; };
@@ -45,6 +51,7 @@
 		B4EE80E81E5E4FF100ABA754 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */; };
 		B4EE80E91E5E4FF100ABA754 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */; };
 		B4EE80EA1E5E4FF100ABA754 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */; };
+		F67C56D8561E7DB96F736F7B /* Pods_ManfreddsAirportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CD8847BC2EAB2BF6DE54F7 /* Pods_ManfreddsAirportUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,12 +72,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1E5A58C293016526B32493 /* Pods-ManfreddsAirport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManfreddsAirport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManfreddsAirport/Pods-ManfreddsAirport.debug.xcconfig"; sourceTree = "<group>"; };
+		1C885A48388EA03911A1DF90 /* Pods_ManfreddsAirport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManfreddsAirport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43527247051297302FBC4ED8 /* Pods-ManfreddsAirportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManfreddsAirportTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManfreddsAirportTests/Pods-ManfreddsAirportTests.release.xcconfig"; sourceTree = "<group>"; };
+		450C82196A01786E4183272B /* Pods_ManfreddsAirportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManfreddsAirportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECE7524072E03B2D5558667 /* Pods-ManfreddsAirportTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManfreddsAirportTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManfreddsAirportTests/Pods-ManfreddsAirportTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1CD8847BC2EAB2BF6DE54F7 /* Pods_ManfreddsAirportUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManfreddsAirportUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B103DC0E39696490A29278 /* Pods-ManfreddsAirportUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManfreddsAirportUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManfreddsAirportUITests/Pods-ManfreddsAirportUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B42A86991E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWhatsPlayingTodayOnWFMU.swift; sourceTree = "<group>"; };
 		B45259DE1E9CF8A200A6797F /* GetCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCats.swift; sourceTree = "<group>"; };
 		B45259E21E9E945000A6797F /* PostCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCats.swift; sourceTree = "<group>"; };
 		B45259E71E9ED26500A6797F /* DeleteCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCats.swift; sourceTree = "<group>"; };
 		B45259EB1E9ED43D00A6797F /* PutCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutCats.swift; sourceTree = "<group>"; };
 		B46F1AB11E54B852007D676B /* GetGitHubHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGitHubHTML.swift; sourceTree = "<group>"; };
+		B47A7AB11EC4BF590005D9D3 /* Aegyptus313.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aegyptus313.ttf; sourceTree = "<group>"; };
+		B47A7AB31EC4BFE10005D9D3 /* AegyptusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AegyptusViewController.swift; sourceTree = "<group>"; };
 		B49077BB1E40D23C00FF45AB /* GetNodeJSHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNodeJSHTML.swift; sourceTree = "<group>"; };
 		B49077BE1E40D4C100FF45AB /* GetW3CHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetW3CHTML.swift; sourceTree = "<group>"; };
 		B4E8773A1E3F8CEA0028782B /* ManfreddsAirport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManfreddsAirport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +105,8 @@
 		B4E877621E3F8CEA0028782B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4E877711E3F922E0028782B /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		B4EE80E71E5E4FF100ABA754 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C09CB7C97F8A67EDFD4C536C /* Pods-ManfreddsAirportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManfreddsAirportUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManfreddsAirportUITests/Pods-ManfreddsAirportUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D56504A47113440C6FBFCDEC /* Pods-ManfreddsAirport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManfreddsAirport.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManfreddsAirport/Pods-ManfreddsAirport.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8207A650D8BD2C075635BAD3 /* Pods_ManfreddsAirport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A5CAB32D49F85D34D07A66 /* Pods_ManfreddsAirportTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,12 +130,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67C56D8561E7DB96F736F7B /* Pods_ManfreddsAirportUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A6F91AA0075B98D453F5F17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C885A48388EA03911A1DF90 /* Pods_ManfreddsAirport.framework */,
+				450C82196A01786E4183272B /* Pods_ManfreddsAirportTests.framework */,
+				A1CD8847BC2EAB2BF6DE54F7 /* Pods_ManfreddsAirportUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93926D6F673FDB69377E5CCC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E1E5A58C293016526B32493 /* Pods-ManfreddsAirport.debug.xcconfig */,
+				D56504A47113440C6FBFCDEC /* Pods-ManfreddsAirport.release.xcconfig */,
+				4ECE7524072E03B2D5558667 /* Pods-ManfreddsAirportTests.debug.xcconfig */,
+				43527247051297302FBC4ED8 /* Pods-ManfreddsAirportTests.release.xcconfig */,
+				B0B103DC0E39696490A29278 /* Pods-ManfreddsAirportUITests.debug.xcconfig */,
+				C09CB7C97F8A67EDFD4C536C /* Pods-ManfreddsAirportUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B42A869D1E5CE8BD00621A31 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +180,23 @@
 			name = Cats;
 			sourceTree = "<group>";
 		};
+		B47A7AAF1EC4BF030005D9D3 /* Aegyptus */ = {
+			isa = PBXGroup;
+			children = (
+				B47A7AB01EC4BF320005D9D3 /* Things */,
+				B47A7AB31EC4BFE10005D9D3 /* AegyptusViewController.swift */,
+			);
+			name = Aegyptus;
+			sourceTree = "<group>";
+		};
+		B47A7AB01EC4BF320005D9D3 /* Things */ = {
+			isa = PBXGroup;
+			children = (
+				B47A7AB11EC4BF590005D9D3 /* Aegyptus313.ttf */,
+			);
+			name = Things;
+			sourceTree = "<group>";
+		};
 		B49077BD1E40D49F00FF45AB /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +212,8 @@
 				B4E877541E3F8CEA0028782B /* ManfreddsAirportTests */,
 				B4E8775F1E3F8CEA0028782B /* ManfreddsAirportUITests */,
 				B4E8773B1E3F8CEA0028782B /* Products */,
+				93926D6F673FDB69377E5CCC /* Pods */,
+				5A6F91AA0075B98D453F5F17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +230,7 @@
 		B4E8773C1E3F8CEA0028782B /* ManfreddsAirport */ = {
 			isa = PBXGroup;
 			children = (
+				B47A7AAF1EC4BF030005D9D3 /* Aegyptus */,
 				B42A869D1E5CE8BD00621A31 /* CoreData */,
 				B4E8776E1E3F91F70028782B /* Network */,
 				B4E8773D1E3F8CEA0028782B /* AppDelegate.swift */,
@@ -217,9 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4E877651E3F8CEA0028782B /* Build configuration list for PBXNativeTarget "ManfreddsAirport" */;
 			buildPhases = (
+				93E46D33FC99EBF716054AAF /* [CP] Check Pods Manifest.lock */,
 				B4E877361E3F8CEA0028782B /* Sources */,
 				B4E877371E3F8CEA0028782B /* Frameworks */,
 				B4E877381E3F8CEA0028782B /* Resources */,
+				478847ED43DFA1C3475597D0 /* [CP] Embed Pods Frameworks */,
+				0B5C22A3429D231B93D385BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4E877681E3F8CEA0028782B /* Build configuration list for PBXNativeTarget "ManfreddsAirportTests" */;
 			buildPhases = (
+				8F26DCE92C406B5498053459 /* [CP] Check Pods Manifest.lock */,
 				B4E8774D1E3F8CEA0028782B /* Sources */,
 				B4E8774E1E3F8CEA0028782B /* Frameworks */,
 				B4E8774F1E3F8CEA0028782B /* Resources */,
+				39C77AC42E3B105811F766D4 /* [CP] Embed Pods Frameworks */,
+				0E87A8C5F1CF3AAC50CC2DEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4E8776B1E3F8CEA0028782B /* Build configuration list for PBXNativeTarget "ManfreddsAirportUITests" */;
 			buildPhases = (
+				14BB9F2205076867FA7E6F71 /* [CP] Check Pods Manifest.lock */,
 				B4E877581E3F8CEA0028782B /* Sources */,
 				B4E877591E3F8CEA0028782B /* Frameworks */,
 				B4E8775A1E3F8CEA0028782B /* Resources */,
+				6196EECF350393CCE7D39152 /* [CP] Embed Pods Frameworks */,
+				E4BD96B2C353C49D125338C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47A7AB21EC4BF590005D9D3 /* Aegyptus313.ttf in Resources */,
 				B4E8774B1E3F8CEA0028782B /* LaunchScreen.storyboard in Resources */,
 				B4E877481E3F8CEA0028782B /* Assets.xcassets in Resources */,
 				B4E877431E3F8CEA0028782B /* Main.storyboard in Resources */,
@@ -340,6 +414,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B5C22A3429D231B93D385BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManfreddsAirport/Pods-ManfreddsAirport-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E87A8C5F1CF3AAC50CC2DEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManfreddsAirportTests/Pods-ManfreddsAirportTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14BB9F2205076867FA7E6F71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		39C77AC42E3B105811F766D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManfreddsAirportTests/Pods-ManfreddsAirportTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		478847ED43DFA1C3475597D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManfreddsAirport/Pods-ManfreddsAirport-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6196EECF350393CCE7D39152 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManfreddsAirportUITests/Pods-ManfreddsAirportUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F26DCE92C406B5498053459 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		93E46D33FC99EBF716054AAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E4BD96B2C353C49D125338C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManfreddsAirportUITests/Pods-ManfreddsAirportUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B4E877361E3F8CEA0028782B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -355,6 +567,7 @@
 				B45259EC1E9ED43D00A6797F /* PutCats.swift in Sources */,
 				B45259DF1E9CF8A200A6797F /* GetCats.swift in Sources */,
 				B45259E31E9E945100A6797F /* PostCats.swift in Sources */,
+				B47A7AB41EC4BFE10005D9D3 /* AegyptusViewController.swift in Sources */,
 				B45259E81E9ED26500A6797F /* DeleteCats.swift in Sources */,
 				B42A869A1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
 				B4E877461E3F8CEA0028782B /* ManfreddsAirport.xcdatamodeld in Sources */,
@@ -369,6 +582,7 @@
 				B45259E91E9ED26500A6797F /* DeleteCats.swift in Sources */,
 				B45259ED1E9ED43D00A6797F /* PutCats.swift in Sources */,
 				B491D71E1E63780500F3809D /* Network.swift in Sources */,
+				B47A7AB51EC4BFE10005D9D3 /* AegyptusViewController.swift in Sources */,
 				B4EE80E91E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
 				B45259E01E9CF8A200A6797F /* GetCats.swift in Sources */,
 				B42A869B1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
@@ -387,6 +601,7 @@
 				B45259EA1E9ED26500A6797F /* DeleteCats.swift in Sources */,
 				B45259EE1E9ED43D00A6797F /* PutCats.swift in Sources */,
 				B491D71F1E63780600F3809D /* Network.swift in Sources */,
+				B47A7AB61EC4BFE10005D9D3 /* AegyptusViewController.swift in Sources */,
 				B4EE80EA1E5E4FF100ABA754 /* CoreDataManager.swift in Sources */,
 				B45259E11E9CF8A200A6797F /* GetCats.swift in Sources */,
 				B42A869C1E5C743400621A31 /* GetWhatsPlayingTodayOnWFMU.swift in Sources */,
@@ -527,6 +742,7 @@
 		};
 		B4E877661E3F8CEA0028782B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E1E5A58C293016526B32493 /* Pods-ManfreddsAirport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E729NE5PP8;
@@ -540,6 +756,7 @@
 		};
 		B4E877671E3F8CEA0028782B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D56504A47113440C6FBFCDEC /* Pods-ManfreddsAirport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E729NE5PP8;
@@ -553,6 +770,7 @@
 		};
 		B4E877691E3F8CEA0028782B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ECE7524072E03B2D5558667 /* Pods-ManfreddsAirportTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -567,6 +785,7 @@
 		};
 		B4E8776A1E3F8CEA0028782B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43527247051297302FBC4ED8 /* Pods-ManfreddsAirportTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -581,6 +800,7 @@
 		};
 		B4E8776C1E3F8CEA0028782B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0B103DC0E39696490A29278 /* Pods-ManfreddsAirportUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ManfreddsAirportUITests/Info.plist;
@@ -594,6 +814,7 @@
 		};
 		B4E8776D1E3F8CEA0028782B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C09CB7C97F8A67EDFD4C536C /* Pods-ManfreddsAirportUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ManfreddsAirportUITests/Info.plist;

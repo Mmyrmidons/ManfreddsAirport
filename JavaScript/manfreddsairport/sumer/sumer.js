@@ -1,5 +1,7 @@
 var xslt4node = require('xslt4node')
 var fs = require('fs')
+var Handlebars = require('handlebars');
+var pdf = require('html-pdf')
 
 exports.parseTrans = function(req, res, next) {
 	var transli = req.params.trans ? "c." + req.params.trans : "c.1.1.1"
@@ -10,7 +12,7 @@ exports.parseTrans = function(req, res, next) {
 	var title = transli.replace("c.", "a.")
 
 	var renderTrans = function() {
-		res.render('sumer', {
+        res.render('sumer', {
             layout: 'boring',
 	   		transliterationPartial: function() { return 'sumer/' + transli },
 	   		translationPartial: function() { return 'sumer/' + transla },
@@ -21,63 +23,125 @@ exports.parseTrans = function(req, res, next) {
 	}
 	
    	if (fs.existsSync(transliXmlPath)) {
+        var emptyTemplate = "static/empty"
 		var config = {
-   			xsltPath: 'sumer/xsl/yevvy.xsl',
+   			xsltPath: 'sumer/xsl/transli.xsl',
    			sourcePath: transliXmlPath,
    			result: 'views/partials/sumer/' + transli + '.handlebars'
 		}
 
 		xslt4node.transform(config, function(err) {
-   			if (err) {
+            if (err) {
    				console.log(err)
    				next()
    			}
 
    			config = {
-   				xsltPath: 'sumer/xsl/poopy.xsl',
+   				xsltPath: 'sumer/xsl/glossary.xsl',
    				sourcePath: transliXmlPath,
    				result: 'views/partials/sumer/' + glossary + '.handlebars'
    			}
 
    			xslt4node.transform(config, function(err) {
-	   			if (err) {
+                if (err) {
 	   				console.log(err)
-	   				glossary = "empty"
+	   				glossary = emptyTemplate
 		   		}
 
-		   		if (fs.existsSync(translaXmlPath)) {
-					config = {
-   						xsltPath: 'sumer/xsl/manny.xsl',
-   						sourcePath: translaXmlPath,
-   						result: 'views/partials/sumer/' + transla + '.handlebars'
-   					}
+                config = {
+                    xsltPath: 'sumer/xsl/title.xsl',
+                    sourcePath: transliXmlPath,
+                    result: 'views/partials/sumer/' + title + '.handlebars'
+                }
 	
-   					xslt4node.transform(config, function(err) {
-   						if (err) {
-		   					console.log(err)
-		   					transla = "empty"
-		   				}
+                xslt4node.transform(config, function(err) {
+                    if (err) {
+		  				console.log(err)
+                        title = emptyTemplate
+		   			}
 
+                    if (!fs.existsSync(translaXmlPath)) {
+				        transla = emptyTemplate
+                        renderTrans()
+                    } else {
                         config = {
-   					        xsltPath: 'sumer/xsl/gemineye.xsl',
-                            sourcePath: transliXmlPath,
-   					        result: 'views/partials/sumer/' + title + '.handlebars'
-   					    }
+   						   xsltPath: 'sumer/xsl/transla.xsl',
+   						   sourcePath: translaXmlPath,
+   						   result: 'views/partials/sumer/' + transla + '.handlebars'
+                        }
 
                         xslt4node.transform(config, function(err) {
-   						   if (err) {
+                            if (err) {
                                console.log(err)
-                               transla = "static/empty"
-                           }
-		   				
+                               transla = emptyTemplate
+                            }
+                             
                             renderTrans()
                         })
-		   			})
-				} else {
-					transla = "static/empty"
-					renderTrans()
-				}				
+		   			}
+                })
 			})
  		})
-	} else { next() }
+	} else next()
+}
+
+exports.growPdf = function(req, res) {
+    var trans = req.body.trans ? req.body.trans : '1.1.1'
+    var pdfPath = 'public/pdf/' + trans + '.pdf'
+    
+    if (fs.existsSync(pdfPath)) {
+        res.send([])
+        return
+    }
+    
+	var transliHandlebarsPath = 'views/partials/sumer/c.' + trans + '.handlebars'
+	var translaHandlebarsPath = 'views/partials/sumer/t.' + trans + '.handlebars'
+	var glossaryHandlebarsPath = 'views/partials/sumer/g.' + trans + '.handlebars'
+	var titleHandlebarsPath = 'views/partials/sumer/a.' + trans + '.handlebars'
+
+    if (!fs.existsSync(transliHandlebarsPath)) {
+        res.status(500)
+        res.send([])
+        return
+    }
+    
+    var transliPartial = fs.readFileSync(transliHandlebarsPath, 'utf8')
+    var translaPartial = fs.existsSync(translaHandlebarsPath) ? fs.readFileSync(translaHandlebarsPath, 'utf8') : null
+    var glossaryPartial = fs.existsSync(glossaryHandlebarsPath) ? fs.readFileSync(glossaryHandlebarsPath, 'utf8') : null
+    var titlePartial = fs.existsSync(titleHandlebarsPath) ? fs.readFileSync(titleHandlebarsPath, 'utf8') : null
+    var emptyPartial = fs.readFileSync('views/partials/sumer/static/empty.handlebars', 'utf8')
+    var markup = fs.readFileSync('views/sumerPdfGrower.handlebars', 'utf8')
+    var template = Handlebars.compile(markup)
+    
+    Handlebars.registerPartial('transliterationPartial', function() { return transliPartial })
+    
+    if (translaPartial)
+        Handlebars.registerPartial('translationPartial', function() { return translaPartial })
+    else
+        Handlebars.registerPartial('translationPartial', function() { return emptyPartial })
+
+    if (glossaryPartial)
+        Handlebars.registerPartial('glossaryPartial', function() { return glossaryPartial })
+    else
+        Handlebars.registerPartial('glossaryPartial', function() { return emptyPartial })
+    
+    if (titlePartial)
+        Handlebars.registerPartial('titlePartial', function() { return titlePartial })
+    else
+        Handlebars.registerPartial('titlePartial', function() { return emptyPartial })
+
+    var html = template({});
+    var options = {
+        format: 'Letter',
+        orientation: 'landscape'
+    }
+
+    pdf.create(html, options).toFile(pdfPath, function(err, rez) {
+        if (err) {
+            console.log(err)
+            res.status(500)
+        }
+
+        res.send([])
+    })
 }

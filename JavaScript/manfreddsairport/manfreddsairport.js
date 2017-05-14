@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', myrkridian.unleashTheMyrkridia)
+app.get(/things(\/.+)*/, myrkridian.myrkThings)
 
 app.get('/headers', function(req, res) {
 	res.set('Content-Type', 'text/plain')
@@ -64,7 +65,21 @@ app.post('/api/cats', cats.postCats)
 app.put('/api/cats', cats.putCats)
 app.delete('/api/cats', cats.deleteCats)
 
+//app.get('/sumer/pdf', sumer.growPdf)
 app.get('/sumer(/:trans)?', sumer.parseTrans)
+app.post('/sumer/pdf', sumer.growPdf)
+
+app.get('/colorschemes', function(req, res) {
+	res.render('empty', {
+        layout: 'boring'
+    })
+})
+
+app.get('/patterns', function(req, res) {
+	res.render('empty', {
+        layout: 'boring'
+    })
+})
 
 app.use(function(req, res, next) {
 	res.status(404)
