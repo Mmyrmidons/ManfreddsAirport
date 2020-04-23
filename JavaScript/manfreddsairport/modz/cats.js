@@ -14,7 +14,8 @@ var cats = [
     {albert: "Albie"},
     {spud: "Hey Bud"},
     {tygerTyger: "Tyger Tyger"},
-    {rexie: "Lord of Hillcrest Avenue"}
+    {rexie: "Lord of Hillcrest Avenue"},
+    {birdieJr: "Squeaky Squeakster McSqueakypants"}
 ]
     
 exports.getCats = function(req, res) {	

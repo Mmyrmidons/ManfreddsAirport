@@ -1,5 +1,22 @@
 <div id="ivo"></div><div id="aloysius">
 <div id="missCallie"><img src="/img/myrkridian/myrkass.jpg" id="myrkAss" style="border: 1px solid {{myrkridianAura}}"/><h1>{{path}}</h1></div>
+{{#if mp3s}}
+    <div class="kenku">
+    {{#if covers}}
+        <img src="{{covers.[0]}}"/>
+    {{/if}}
+        <audio controls autoplay>
+            <source src="{{mp3s.[0]}}" type="audio/mpeg">
+        </audio>
+        {{#each mp3s}}
+            {{#if @index}}
+                <a href="#">{{.}}</a>
+            {{else}}
+                <a href="#" class="vodyanoi">{{.}}</a>
+            {{/if}}
+        {{/each}}
+    </div>
+{{/if}}
 <ol>
     {{#each paths}}
         <li><a href="{{.}}">{{.}}</a></li>
@@ -10,3 +27,15 @@
     {{/each}}
 </ol>
 </div>
+
+{{#section 'jsLinks'}}
+    <script type="text/javascript">
+        var covers = [
+        {{#each covers}}
+            '{{.}}',
+        {{/each}}
+        ]
+    </script>
+    <script type="text/javascript" src="/js/myrkridian.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+{{/section}}

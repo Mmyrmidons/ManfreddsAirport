@@ -1,5 +1,5 @@
 var sumer = (function() {
-    var onReady = function() {
+	var onReady = function() {
 		$('.transliterationPartial > div').each(function() {
             var siblingId = $(this).attr("id")
 
@@ -52,40 +52,16 @@ var sumer = (function() {
                 $('html, body').animate({scrollTop: 0}, 500);
         })
         
-        $('.firedrake').click(function(event) {
-            var disenchanter = $('.disenchanter')
-            var leftBoundary = '0px'
-            var left = disenchanter.css('left') == leftBoundary ? 1024 : leftBoundary
-            var symbol = disenchanter.css('left') == leftBoundary ? '+' : '-'
-            
-            $('html, body').addClass('vilstrack')
-
-            disenchanter.animate({
-                left: left
-            }, 377, function() {
-                $('.firedrake').text(symbol)
-                
-                if (disenchanter.css('left') == leftBoundary) {
-                    disableInteractions()
-                } else {
-                    $('html, body').removeClass('vilstrack')
-                    enableInteractions()
-                }
-            })
-            
-            event.preventDefault()
-        })
-        
-        $('.sirine a').click(function(event) {
-            var nthP = $('.slaad p:eq(' + $(this).index() + ')')
-            
-            $('.slaad').animate({
-                scrollTop: nthP.offset().top
-            }, 700)
-            
-            event.preventDefault()
-        })
-
+//        $('.sirine a').click(function(event) {
+//            var nthP = $('.slaad p:eq(' + $(this).index() + ')')
+//            
+//            $('.slaad').animate({
+//                scrollTop: nthP.offset().top
+//            }, 700)
+//            
+//            event.preventDefault()
+//        })
+//
         $('.slaad a').click(function(event) {
             var href = $(this).attr('href')
             
@@ -148,20 +124,82 @@ var sumer = (function() {
             }
         }
         
-        var hollyphantIndex = 398;
-        
-        $('.hollyphant > div').draggable({
-            cursor: "grab",
-            start: function(event, ui) {
+		if ($('.hellcat').text().length > 60)
+			$('.hellcat').css('font-size', '21px')
+		
+		menu()
+		enableInteractions()
+    }
+	
+	var menu = function() {
+		$('.firedrake').click(function(event) {
+			var isOpen = $('.sirine').position().left < 998
+
+			if (isOpen)
+				$(this).text('+')
+			else
+				$(this).text('-')
+		
+			anime({
+				targets: '.sirine',
+				translateX: isOpen ? 0 : parseInt($('.sirine').css('right')),
+				easing: 'easeInSine',
+				duration: 298
+			})
+
+			event.preventDefault()
+		})
+
+		$('.sirine a').click(function(event) {
+			var nthGreenSlaad = $(this).index()
+
+			anime({
+				targets: '.greenSlaad:nth-child(' + nthGreenSlaad + ')',
+				top: '110px',
+				duration: 558,
+				easing: 'easeInOutQuad'
+			})
+			
+			$('.firedrake').click()
+            event.preventDefault()
+		})
+
+        $('.closeGreenSlaad').click(function(event) {
+			var nthGreenSlaad = $(this).parent().parent().index() + 1
+
+			anime({
+				targets: '.greenSlaad:nth-child(' + nthGreenSlaad + ')',
+				top: '-998px',
+				duration: 558,
+				easing: 'easeInOutQuad'
+			})
+
+            event.preventDefault()
+        })
+
+
+		var hollyphantIndex = 98
+
+		$('.greenSlaad').draggable({
+            cursor: "move",
+            start: function() {
                 $(this).css('z-index', hollyphantIndex++)
             }
-        })
-        
-        enableInteractions()
-    }
+		})
+		
+//		$( ".greenSlaad" ).mousedown(function(event) {
+//			$(this).css('z-index', 998)
+//			
+//			event.preventDefault()
+//		})
+	}
+	
+	var toggleMenuItem = function(closePlease) {
+			
+	}
     
     var enableInteractions = function() {
-        $('.transliterationPartial span[title]').on('mouseover', glosser)
+		$('.transliterationPartial span[title]').on('mouseover', glosser)
         $('.transliterationPartial .persephone').on('mouseover', highlights.lightSalmon)
         $('.transliterationPartial .persephone').on('mouseout', highlights.mistyRose)
         $('.translationPartial .persephone').on('mouseover', highlights.lightPink)
@@ -328,4 +366,4 @@ var sumer = (function() {
 
 $(document).ready(function() {
 	sumer.onReady()
-});
+})

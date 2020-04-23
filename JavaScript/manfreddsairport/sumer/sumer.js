@@ -18,7 +18,8 @@ exports.parseTrans = function(req, res, next) {
 	   		translationPartial: function() { return 'sumer/' + transla },
 	   		glossaryPartial: function() { return 'sumer/' + glossary },
 	   		titlePartial: function() { return 'sumer/' + title },
-            tableOfContentsPartial: function() { return 'sumer/static/tableOfContents' }
+            tableOfContentsPartial: function() { return 'sumer/static/tableOfContents' },
+            menuPartial: function() { return 'sumer/static/menu' }
 	   	})
 	}
 	

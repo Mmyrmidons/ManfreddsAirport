@@ -20,6 +20,7 @@ enum Domain {
     static let GitHub = "https://github.com/"
     static let WFMU = "https://wfmu.org/"
     static let Tuskss = "http://localhost:3099"
+    static let Tusksss = "https://localhost:3098"
 }
 
 enum HTTPMethod {

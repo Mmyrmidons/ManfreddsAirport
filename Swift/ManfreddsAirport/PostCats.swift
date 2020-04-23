@@ -10,7 +10,7 @@ import Foundation
 
 class PostCats : Network {
     init(success successCallback: @escaping StringCallback, failure failureCallback: @escaping VoidCallback) {
-        let url = URL(string: Domain.Tuskss + "/api/cats")!
+        let url = URL(string: Domain.Tusksss + "/api/cats")!
         var request = URLRequest(url: url)
         
         let json = ["linus": "Mistr Linus", "poopy": "The Poupster"]

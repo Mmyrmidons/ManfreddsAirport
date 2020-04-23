@@ -27,8 +27,7 @@ a:focus {
 .glossaryPartial {
 	width: 272px;
     margin: 18px 0;
-/*    height: 100%;*/
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .iceLizard {
@@ -113,16 +112,8 @@ a:focus {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
 .disenchanter {
-    background-color: black;
-    opacity: 0.6;
     position: absolute;
-    top: 90px;
-    left: 1024px;
-    width: 1024px;
-    height: 2048px;
-    padding-right: 40px;
-    z-index: 198;
-    border: 1px solid palegreen;
+	padding-right: 40px;
 }
 
 .disenchanter p {
@@ -130,15 +121,162 @@ a:focus {
 
 .disenchanter a {
     text-decoration: none;
-    color: black;
 }
 
 .vilstrack .disenchanter * {
 }
 
+.greenSlaad {
+	background-color: hsla(342, 100%, 0%, 0.85);
+	width: 390px;
+	height: 390px;
+	position: absolute;
+	top: -998px;
+	left: 98px;
+	border: 1px solid goldenrod;
+	display: block;
+}
+
+.greenSlaad p {
+	color: goldenrod;
+	width: inherit;
+	cursor: move;
+	font-weight: bold;
+	padding: 6px 6px 0;
+}
+
+.greenSlaad a {
+	display: block;
+	color: goldenrod;
+}
+
+.greenSlaad a:hover {
+	color: goldenrod;
+}
+
+.closeGreenSlaad {
+    font-family: 'Macondo', cursive;
+	font-size: 21px;
+	margin: 3px 9px 0 0;
+	font-weight: bold;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: skyblue;
+}
+
+.greenSlaad:nth-child(2) {
+	left: 198px;
+	border: 1px solid orangered;
+	color: orangered;
+}
+
+.greenSlaad:nth-child(2) a {
+	color: orangered;	
+}
+
+.greenSlaad:nth-child(2) p {
+	color: orangered;
+}
+
+.greenSlaad:nth-child(3) {
+	left: 258px;
+	border: 1px solid orangered;
+	color: deeppink;
+}
+
+.greenSlaad:nth-child(3) a {
+	color: deeppink;	
+}
+
+.greenSlaad:nth-child(3) p {
+	color: deeppink;
+}
+
+.greenSlaad:nth-child(4) {
+	left: 298px;
+	border: 1px solid lightgreen;
+	color: lightgreen;
+}
+
+.greenSlaad:nth-child(4) a {
+	color: lightgreen;	
+}
+
+.greenSlaad:nth-child(4) p {
+	color: lightgreen;
+}
+
+.greenSlaad:nth-child(5) {
+	left: 358px;
+	border: 1px solid goldenrod;
+	color: goldenrod;
+}
+
+.greenSlaad:nth-child(5) a {
+	color: goldenrod;	
+}
+
+.greenSlaad:nth-child(5) p {
+	color: goldenrod;
+}
+
+.greenSlaad:nth-child(6) {
+	left: 398px;
+	border: 1px solid skyblue;
+	color: skyblue;
+}
+
+.greenSlaad:nth-child(6) a {
+	color: skyblue;	
+}
+
+.greenSlaad:nth-child(6) p {
+	color: skyblue;
+}
+
+.greenSlaad:nth-child(7) {
+	left: 458px;
+	border: 1px solid lightgreen;
+	color: lightgreen;
+}
+
+.greenSlaad:nth-child(7) a {
+	color: lightgreen;	
+}
+
+.greenSlaad:nth-child(7) p {
+	color: lightgreen;
+}
+
+.greenSlaad:nth-child(8) {
+	left: 498px;
+	border: 1px solid orangered;
+	color: orangered;
+}
+
+.greenSlaad:nth-child(8) a {
+	color: orangered;	
+}
+
+.greenSlaad:nth-child(8) p {
+	color: orangered;
+}
+
+.belashyrra {
+	overflow: scroll;
+	height: 332px;
+	padding: 6px;
+}
+
+.pernicon {
+    float: left;
+}
+
 .hollyphant {
     overflow: hidden;
     height: 100%;
+	display: none;
 }
 
 .hollyphant > div {
@@ -157,59 +295,70 @@ a:focus {
     color: chartreuse;
 }
 
-.pernicon {
-    float: left;
-    color: black;
-}
-
-.redSlaad {
-    color: dodgerblue;
-    background-color: crimson;
-}
-
-.blueSlaad {
-    color: dodgerblue;
-    background-color: navy;
-}
-
-.deathSlaadi {
-    color: dodgerblue;
-    background-color: chartreuse;
-}
-
-.greenSlaad {
-    color: dodgerblue;
-    background-color: lime;
-}
-
-.greySlaadi {
-    color: dodgerblue;
-    background-color: lightslategrey;
-}
-
-.ssendam {
-    color: dodgerblue;
-    background-color: gold;
-}
-
-.ygorl {
-    color: dodgerblue;
-    background-color: orangered;
-}
-
 .sirine {
-    height: 90px;
-    padding: 18px 12px;
-    text-align: right;
-    overflow: visible;
+	background-color: hsla(0, 0%, 0%, 0.85);
+	margin-top: 12px;
+	padding: 6px 0 6px 12px;
+	position: absolute;
+	top: 90px;
+	right: -384px;
+	border-top: 1px solid deeppink;
+	border-bottom: 1px solid deeppink;
+	border-left: 1px solid deeppink;
+	text-align: left;
+	z-index: 297;
 }
 
-.sirine a {
-/*    color: dodgerblue;*/
-    font-size: 12px;
-    margin: 12px 0;
-    font-family: 'Macondo', cursive;
+.sirine p {
+	font-weight: bold;
+	color: deeppink;
 }
+.sirine a {
+	color: deeppink;
+/*	opacity: 0;*/
+    margin: 3px 0;
+	display: block;
+	font: inherit;
+	text-decoration: none;
+}
+
+.sirine a:hover {
+	color: deeppink;
+}
+	 
+/*
+.sirine a:nth-child(1):hover {
+	color: magenta;
+}
+
+.sirine a:nth-child(2):hover {
+	color: goldenrod;
+}
+
+.sirine a:nth-child(3):hover {
+	color: skyblue;
+}
+
+.sirine a:nth-child(4):hover {
+	color: lightgreen;
+}
+
+.sirine a:nth-child(5):hover {
+	color: orangered;
+}
+
+.sirine a:nth-child(6):hover {
+	color: magenta;
+}
+
+.sirine a:nth-child(7):hover {
+	color: skyblue;
+}
+
+.sirine a:nth-child(8):hover {
+	color: orangered;
+}
+*/
 
 .vilstrack .sirine span {
     color: thistle;

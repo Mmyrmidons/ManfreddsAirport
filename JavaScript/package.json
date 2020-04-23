@@ -9,11 +9,17 @@
   "author": "Dunc",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "express-handlebars": "^3.0.0",
-    "html-pdf": "^2.1.0",
-    "jquery": "^3.2.1",
+    "animejs": "^3.1.0",
+    "body-parser": "^1.19.0",
+    "certbot": "^1.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "html-pdf": "^2.2.0",
+    "http-port-forward": "^2.0.3",
+    "http-proxy": "^1.18.0",
+    "java": "^0.12.0",
+    "jquery": "^3.4.1",
+    "letsencrypt-express": "^2.0.7",
     "xslt4node": "^0.3.2"
   }
 }
