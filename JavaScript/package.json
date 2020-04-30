@@ -18,7 +18,7 @@
     "http-port-forward": "^2.0.3",
     "http-proxy": "^1.18.0",
     "java": "^0.12.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "letsencrypt-express": "^2.0.7",
     "xslt4node": "^0.3.2"
   }
