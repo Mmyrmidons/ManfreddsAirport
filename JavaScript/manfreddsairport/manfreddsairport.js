@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var https = require('https')
+const args = require('yargs').argv
 var bodyParser = require('body-parser')
 var fs = require('fs')
 var handlebars = require('express-handlebars').create({
@@ -15,13 +16,17 @@ var handlebars = require('express-handlebars').create({
 		}
 	}	
 })
+
+const pjson = require('./package.json')
+const port = args.port || 80
+const securePort = args.securePort || 443
+
 var myrkridian = require('./modz/myrkridian.js')
 //var cats = require('./modz/cats.js')
 var sumer = require('./sumer/sumer.js')
 
 app.engine('handlebars', handlebars.engine)
 
-app.set('port', process.env.PORT || 3099)
 app.set('view engine', 'handlebars')
 
 app.use(bodyParser.json())
@@ -48,6 +53,7 @@ app.get('/myth', function(req, res) {
         layout: 'boring'
     })
 })
+
 
 //app.get('/api/cats', cats.getCats)    
 //app.post('/api/cats', cats.postCats)
@@ -82,6 +88,30 @@ app.use(function(err, req, res, next) {
 	res.render('500')
 })
 
-app.listen(app.get('port'), function() {
-	console.log("Welcome to Manfredd's Airport. All flights departing from port " + app.get('port'))
-})
+// app.listen(app.get('port'), function() {
+// 	console.log("Welcome to Manfredd's Airport. All flights departing from port " + app.get('port'))
+// })
+
+try {
+	const privateKey = fs.readFileSync('/etc/letsencrypt/live/' + pjson.domain + '/privkey.pem', 'utf8');
+	const certificate = fs.readFileSync('/etc/letsencrypt/live/' + pjson.domain + '/cert.pem', 'utf8');
+	const ca = fs.readFileSync('/etc/letsencrypt/live/' + pjson.domain + '/chain.pem', 'utf8');
+
+	const credentials = {
+		key: privateKey,
+		cert: certificate,
+		ca: ca
+	}
+
+	const httpsServer = https.createServer(credentials, app);
+
+	httpsServer.listen(securePort, () => {
+		console.log('Listening for secure Deerman requests from port ' + securePort)
+	})
+} catch(error) {
+	console.log("Secure Deerman error = " + error)
+} finally {
+	app.listen(port, function() {
+   		console.log("Listening for Deerman requests from port " + port)
+	})
+}

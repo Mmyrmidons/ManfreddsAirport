@@ -53,15 +53,9 @@ exports.myrkThings = function(req, res) {
     var mp3s = []
     var covers = []
     var summonedWarriors = summonTheMyrkridia(thingsPath)
-
     var i = 0;
-
-    console.log("Manners: " + thingsPath.replace(/^.*\/musick\//, ""))
-
     var pwd = thingsPath.replace(/^.*\/musick\//, "")
     var pwdRegex = new RegExp("^" + pwd)
-
-
 
     for (var warrior in summonedWarriors) {
         var albumId = (Math.random() * 1000).toString().split('.')[0]
@@ -73,10 +67,7 @@ exports.myrkThings = function(req, res) {
         if (parseInt(warrior))
             warrior = '/img/spudandal/spudandalbert.jpg'
 
-        console.log("Manners 1: " + albumId)
         covers.push(warrior)
-
-
     }
 
     fs.readdir(thingsPath, function(error, items) {
