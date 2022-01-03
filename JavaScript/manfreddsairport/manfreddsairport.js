@@ -36,6 +36,12 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', myrkridian.unleashTheMyrkridia)
 app.get(/things(\/.+)*/, myrkridian.myrkThings)
 
+app.get('/myth', function(req, res) {
+	res.render('myth', {
+        layout: 'boring'
+    })
+})
+
 app.get('/yevvie', function(req, res) {
 	res.render('yevvie', {
         layout: 'boring'
@@ -48,7 +54,7 @@ app.get('/spudandal', function(req, res) {
     })
 })
 
-app.get('/myth', function(req, res) {
+app.get('/giggers', function(req, res) {
 	res.render('myth', {
         layout: 'boring'
     })
