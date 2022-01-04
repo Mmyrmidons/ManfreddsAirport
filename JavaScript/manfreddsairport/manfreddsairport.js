@@ -66,7 +66,6 @@ app.get('/giggers', function(req, res) {
 //app.put('/api/cats', cats.putCats)
 //app.delete('/api/cats', cats.deleteCats)
 
-app.get('/sumer/pdf', sumer.growPdf)
 app.get('/sumer(/:trans)?', sumer.parseTrans)
 app.post('/sumer/pdf', sumer.growPdf)
 
