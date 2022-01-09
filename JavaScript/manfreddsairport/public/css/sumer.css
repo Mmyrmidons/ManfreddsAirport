@@ -434,10 +434,11 @@ a:focus {
 
 .diakk {
 	background-color: black;
-	width: 377px;
+	width: 690px;
     font-size: 14px;
     padding-top: 9px;
     float: left;
+	color: white;
 }
 
 .lemma {
@@ -458,6 +459,26 @@ a:focus {
     margin-right: 0.5em;
 }
 
+.notoGlyph {
+	color: mistyrose;
+    float: left;
+	font-size: 18px;
+	padding-left: 6px;
+}
+
+.notoGlyph span {
+	padding: 0 6px;
+}
+
+.notoGlyph span.noGlyph {
+	padding: 0 1px;
+}
+
+.dicGlyph {
+	width: 6px;
+	padding: 0;
+}
+
 .dicLemma {
     color: orangered;
     font-weight: bold;
@@ -473,6 +494,7 @@ a:focus {
 }
 
 .githzerai .dicLemma,
+.githzerai .dicGlyph,
 .githzerai .dicPos,
 .githzerai .dicLabel {
     color: paleturquoise;

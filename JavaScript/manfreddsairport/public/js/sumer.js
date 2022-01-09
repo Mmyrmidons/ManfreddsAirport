@@ -1,4 +1,8 @@
 var sumer = (function() {
+	let descriptorsPattern = /(?: SQUARED TIMES | OVER INVERTED | REVERSED OVER | TIMES | OVER | PLUS | CROSSING | OPPOSING )/gi
+	let unusedDescriptorsPattern = /(?: SQUARED | REVERSED | ASTERISK | REVERSED | ROTATED NINETY DEGREES | THREE TIMES | VARIANT FORM | INVERTED$)/
+	var transliGlyphs = {}
+	
 	var onReady = function() {
 		$('.transliterationPartial > div').each(function() {
             var siblingId = $(this).attr("id")
@@ -126,7 +130,8 @@ var sumer = (function() {
         
 		if ($('.hellcat').text().length > 60)
 			$('.hellcat').css('font-size', '21px')
-		
+			
+		initGlyphs()
 		menu()
 		enableInteractions()
     }
@@ -202,6 +207,7 @@ var sumer = (function() {
 		$('.transliterationPartial span[title]').on('mouseover', glosser)
         $('.transliterationPartial .persephone').on('mouseover', highlights.lightSalmon)
         $('.transliterationPartial .persephone').on('mouseout', highlights.mistyRose)
+        $('.translationPartial .persephone').on('mouseover', glypher)
         $('.translationPartial .persephone').on('mouseover', highlights.lightPink)
         $('.translationPartial .persephone').on('mouseout', highlights.mistierRose)
         $('input').prop('disabled', false)
@@ -356,7 +362,58 @@ var sumer = (function() {
 	}
 
 	var gloss = function(lemma, pos, label) {
-		$(".diakk").html("<div class='lemma'>" + lemma + ":</div><div class='def'><span class='pos'>" + pos + "</span>" + label + "</div>")
+		let diakk = $(".diakk")
+
+		diakk.html("<div class='lemma'>" + lemma + ":</div><div class='def'><span class='pos'>" + pos + "</span>" + label + "</div>")
+
+		if (transliGlyphs[lemma])
+			diakk.append("<div class='notoGlyph'>" + transliGlyphs[lemma] + "</div>")
+	}
+	
+	var glypher = function() {
+		let diakk = $(".diakk")		
+		let translis = $(".transliterationPartial > div[id$=" + $(this).attr('id') + "]")
+		var ozziString = String()
+		
+		translis.children().each(function() {
+			$(this).children().each(function(index) {
+				let thisSpan = $(this)
+
+				if (thisSpan.attr("title")) {
+				// if (!thisSpan.attr("title"))
+				// 	ozziString += "<span class='beatrix'>" + thisSpan.text() + "</span> "
+				// else {
+					
+					let lemma = thisSpan.text()
+					
+					if (transliGlyphs[lemma])
+						ozziString += "<span>" + transliGlyphs[lemma] + "</span>"
+					else if ((index % 3) == 1)
+						ozziString += "<span class='noGlyph'>.</span>"
+				}				
+			})
+		})
+	
+		diakk.html("<div class='notoGlyph'>" + ozziString +"</div><br/>")
+	}
+	
+	var initGlyphs = function() {
+		var dicLemmaGlyphs = {}
+		
+		$("#glossaryTable .dicLemma").text(function(index, text) {
+			dicLemmaGlyphs[text] = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase()
+		})
+
+		for (const mKey in glyphMap) {
+			let dashifiedGlyph = glyphMap[mKey].name.replace(descriptorsPattern, "-")
+			
+			for (const dKey in dicLemmaGlyphs) {
+				if (dashifiedGlyph == dicLemmaGlyphs[dKey]) {
+					transliGlyphs[dKey] = glyphMap[mKey].character
+					$("#glossaryTable .dicLemma:contains(" + dKey + ")").next().text(transliGlyphs[dKey])
+				}
+			}
+		}
 	}
 	
     return {

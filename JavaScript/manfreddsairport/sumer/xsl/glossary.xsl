@@ -22,6 +22,7 @@
 	
 	<tr>
 		<td valign="top" class="dicLemma"><xsl:value-of select="$lemma"/></td>
+		<td valign="top" class="dicGlyph"></td>
 		<td valign="top" class="dicPos">
 			<xsl:if test="@pos = 'AJ'">
 				adj

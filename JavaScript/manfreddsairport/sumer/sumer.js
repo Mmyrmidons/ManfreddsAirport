@@ -151,27 +151,12 @@ try {
 	exports.parseTrans = function(req, res) {
 		const https = require('https')
 		
-		https.get('https://urtheaters.com/sumer/4.07.2', (resp) => {
+		https.get('https://urtheaters.com/sumer/1.1.1', (resp) => {
 			let html = ''
 			
 			resp.on('data', (chunk) => { html += chunk })
-			
-			resp.on('end', () => {
-				res.send(html)
-				
-				// 		    	res.render('sumer', {
-				// 		        	layout: 'boring',
-				// 		 			transliterationPartial: function() { return 'sumer/static/empty' },
-				// 		   			translationPartial: function() { return 'sumer/static/empty' },
-				// 		   			glossaryPartial: function() { return 'sumer/static/empty' },
-				// 		   			titlePartial: function() { return 'sumer/static/empty' },
-				// 		        	tableOfContentsPartial: function() { return 'sumer/static/tableOfContents' },
-				// 		        	menuPartial: function() { return 'sumer/static/empty' }
-				// })
-			})
-		
+			resp.on('end', () => { res.send(html) })
 		}).on("error", (err) => { console.log("Service Error: " + err.message) })
-
 	}
 
 	exports.growPdf = function(req, res) {
