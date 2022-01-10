@@ -376,6 +376,11 @@ a:focus {
     width: 70%;
 }
 
+.hellcat span {
+    font: 76%/162% "Franklin Gothic Medium", sans-serif;
+	font-size: 21px;
+}
+
 .planetar {
 	font-weight: bold;
     font-size: 18px;

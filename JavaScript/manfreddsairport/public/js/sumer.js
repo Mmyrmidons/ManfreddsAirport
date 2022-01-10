@@ -127,14 +127,26 @@ var sumer = (function() {
                     gloss($.trim(firstTranslitParts[0]), $.trim(firstTranslitParts[1]), $.trim(firstTranslitParts[2]))
             }
         }
-        
-		if ($('.hellcat').text().length > 60)
-			$('.hellcat').css('font-size', '21px')
-			
+		
+		serveLawfulEvilMaster()
 		initGlyphs()
 		menu()
 		enableInteractions()
     }
+	
+	var serveLawfulEvilMaster = function() {
+		let hellcat = $('.hellcat')
+		
+		// hellcat.html(hellcat.text().replace(/\[hbreve\]/g, "<span>ḫ</span>"))
+		// hellcat.html(hellcat.text().replace(/\[Hbreve\]/g, "<span>Ḫ</span>"))
+		// hellcat.html(hellcat.text().replace(/\[gcirc\]/g, "<span>ĝ</span>"))
+		// hellcat.html(hellcat.text().replace(/\[Gcirc\]/g, "<span>Ĝ</span>"))
+		
+		if (hellcat.length > 60) {
+			$('.hellcat').css('font-size', '21px')
+			$('.hellcat span').css('font-size', '18px')			
+		}
+	}
 	
 	var menu = function() {
 		$('.firedrake').click(function(event) {
